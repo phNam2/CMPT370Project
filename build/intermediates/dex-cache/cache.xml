@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="D:\Peter\University\USask\370\App\MyHome\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="d9464178d8a5215d4765dc02569d869b9a09424e">
+        <dex dex="D:\Peter\University\USask\370\App\MyHome\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_962355caeb2fec82b270a37d8892b08b09e27dcb\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\peter\.android\build-cache\884857b85664684d50f47c1b02ee9cba70f9dc08\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="D:\Peter\University\USask\370\App\MyHome\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7889ac21bdc1ea062b2499e9bf96b53b86b934cf\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\peter\.android\build-cache\1c1f1a0a7e4c45d6aaae038dc3cc9d99188cd684\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="D:\Peter\University\USask\370\App\MyHome\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c035d1787755d2425e184189694912e37032ae44\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\peter\.android\build-cache\c30c074515c94b473784d4c48c967210e3b733a9\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="D:\Peter\University\USask\370\App\MyHome\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_0751ebdbd50a475e1172317e5531935d69d9b2dd\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Peter\University\USask\370\App\MyHome\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="D:\Peter\University\USask\370\App\MyHome\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_eb9617181a455aa86c333d249ac0471314eced52\classes.dex" />
+    </item>
+
+</items>
