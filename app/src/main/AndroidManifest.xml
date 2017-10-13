@@ -48,7 +48,7 @@
         <activity
             android:name=".ReviewActiListActivity"
             android:label="@string/title_reviewacti_list"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ReviewActiDetailActivity"
             android:label="@string/title_reviewacti_detail"
@@ -58,6 +58,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.peter.myhome.ReviewActiListActivity" />
         </activity>
+        <activity android:name=".ReviewActivity"></activity>
     </application>
 
 </manifest>
