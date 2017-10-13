@@ -26,7 +26,38 @@
         <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".review.reviewActivityListActivity"
+            android:label="@string/title_reviewactivity_list"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.peter.myhome.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".review.reviewActivityDetailActivity"
+            android:label="@string/title_reviewactivity_detail"
+            android:parentActivityName=".review.reviewActivityListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.peter.myhome.review.reviewActivityListActivity" />
+        </activity>
+        <activity
+            android:name=".ReviewActiListActivity"
+            android:label="@string/title_reviewacti_list"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ReviewActiDetailActivity"
+            android:label="@string/title_reviewacti_detail"
+            android:parentActivityName=".ReviewActiListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.peter.myhome.ReviewActiListActivity" />
+        </activity>
     </application>
 
 </manifest>
