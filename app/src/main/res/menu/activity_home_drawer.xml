@@ -18,7 +18,6 @@
         <item
             android:id="@+id/nav_review"
             android:icon="@android:drawable/ic_menu_edit"
-            android:onClick="sendMessage"
             android:title="Review" />
     </group>
 

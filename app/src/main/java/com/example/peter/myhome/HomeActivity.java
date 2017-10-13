@@ -100,9 +100,9 @@ public class HomeActivity extends AppCompatActivity
         return true;
     }
 
-
-    public void sendMessage(View view) {
-        Intent intent = new Intent(this, ReviewActi.class);
-        startActivity(intent);
-    }
+//
+//    public void sendMessage(View view) {
+//        Intent intent = new Intent(this, ReviewActiDetailActivity.class);
+//      startActivity(intent);
+//  }
 }
