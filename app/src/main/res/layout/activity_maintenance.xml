@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.peter.myhome.MaintenanceActivity">
+
+    <RelativeLayout
+        android:layout_width="328dp"
+        android:layout_height="479dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp">
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="100dp"
+            android:layout_height="76dp"
+            android:text="DRAFTS"
+            tools:layout_editor_absoluteX="130dp"
+            tools:layout_editor_absoluteY="419dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
+        <ProgressBar
+            android:id="@+id/progressBar5"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="331dp"
+            android:layout_height="25dp"
+            tools:layout_editor_absoluteX="15dp"
+            tools:layout_editor_absoluteY="385dp"
+            android:layout_above="@+id/button4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="9dp" />
+
+        <ScrollView
+            android:layout_width="327dp"
+            android:layout_height="162dp"
+            tools:layout_editor_absoluteX="17dp"
+            tools:layout_editor_absoluteY="211dp"
+            android:layout_marginBottom="11dp"
+            android:id="@+id/scrollView3"
+            android:layout_above="@+id/progressBar5"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/editText16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textMultiLine"
+                    android:text="all the comment details will go here for the duration of the maintenance. all the comment details will go here for the duration of the maintenance. all the comment details will go here for the duration of the maintenance. all the comment details will go here for the duration of the maintenance. all the comment details will go here for the duration of the maintenance." />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="108dp"
+            android:layout_height="77dp"
+            android:text="HISTORY"
+            tools:layout_editor_absoluteX="236dp"
+            tools:layout_editor_absoluteY="419dp"
+            android:layout_alignTop="@+id/button4"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <Button
+            android:id="@+id/newMaintenance"
+            android:layout_width="105dp"
+            android:layout_height="76dp"
+            android:text="NEW"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="419dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/scrollView3"
+            android:layout_alignStart="@+id/scrollView3" />
+
+        <ScrollView
+            android:layout_width="321dp"
+            android:layout_height="179dp"
+            tools:layout_editor_absoluteX="20dp"
+            tools:layout_editor_absoluteY="16dp"
+            android:id="@+id/scrollView2"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignLeft="@+id/scrollView3"
+            android:layout_alignStart="@+id/scrollView3">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/address1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPostalAddress"
+                    android:text="address1" />
+
+                <EditText
+                    android:id="@+id/address2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPostalAddress"
+                    android:text="address2" />
+
+                <EditText
+                    android:id="@+id/editText13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPostalAddress"
+                    android:text="address3" />
+
+                <EditText
+                    android:id="@+id/editText12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPostalAddress"
+                    android:text="address4" />
+
+                <EditText
+                    android:id="@+id/editText10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPostalAddress"
+                    android:text="address5" />
+
+                <EditText
+                    android:id="@+id/editText9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPostalAddress"
+                    android:text="address6" />
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
