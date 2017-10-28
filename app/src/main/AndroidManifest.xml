@@ -30,6 +30,9 @@
         <activity
             android:name=".MaintenanceActivity">
         </activity>
+        <activity
+            android:name=".PaymentActivity">
+        </activity>
     </application>
 
 </manifest>

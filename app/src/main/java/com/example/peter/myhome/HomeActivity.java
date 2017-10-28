@@ -97,7 +97,7 @@ public class HomeActivity extends AppCompatActivity
 
             Intent intent = new Intent(HomeActivity.this, PaymentActivity.class);
             startActivity(intent);
-            
+
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
