@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:baselineAligned="false"
@@ -11,7 +12,8 @@
         android:layout_width="189dp"
         android:layout_height="83dp"
         android:layout_weight="0.01"
-        android:text="Payment History" />
+        android:text="Payment History"
+        tools:onClick="onButtonHistoryClick" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,13 +38,15 @@
             android:layout_width="134dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Paypal" />
+            android:text="Paypal"
+            tools:onClick="onButtonPaypalClick" />
 
         <Button
             android:id="@+id/credit_debit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Credit/Debit Card" />
+            android:text="Credit/Debit Card"
+            tools:onClick="onButtonCardClick" />
     </LinearLayout>
 
 </LinearLayout>

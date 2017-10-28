@@ -2,6 +2,7 @@ package com.example.peter.myhome;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 /**
  * Created by Nam on 2017-10-28.
@@ -15,5 +16,15 @@ public class PaymentActivity extends AppCompatActivity {
         setContentView(R.layout.payment_first_page);
     }
 
-    
+    public void onButtonHistoryClick(View v) {
+        
+    }
+
+    public void onButtonCardClick(View v) {
+
+    }
+
+    public void onButtonPaypalClick(View v) {
+
+    }
 }
