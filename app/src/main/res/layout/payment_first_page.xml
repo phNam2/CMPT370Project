@@ -27,33 +27,47 @@
         android:orientation="horizontal"></LinearLayout>
 
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="356dp"
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="  Choose a payment method:"
-        tools:textAlignment="textStart"
-        tools:textSize="24sp" />
+        android:layout_weight="0.01"
+        android:text="Choose a payment method:"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="111dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/card_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2.90"
+            android:onClick="onButtonCardClick"
+            android:text="Credit/Debit Card" />
+
+        <LinearLayout
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.90"
+            android:orientation="vertical"></LinearLayout>
+
+        <Button
+            android:id="@+id/paypal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="22.32"
+            android:text="Paypal"
+            tools:onClick="onButtonPaypalClick" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="312dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/paypal"
-            android:layout_width="134dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="29.63"
-            android:text="Paypal"
-            tools:onClick="onButtonPaypalClick" />
-
-        <Button
-            android:id="@+id/credit_debit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Credit/Debit Card"
-            tools:onClick="onButtonCardClick"
-            android:layout_weight="2.20" />
     </LinearLayout>
 
 </LinearLayout>
