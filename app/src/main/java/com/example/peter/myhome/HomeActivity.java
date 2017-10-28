@@ -95,6 +95,9 @@ public class HomeActivity extends AppCompatActivity
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
 
+            Intent intent = new Intent(HomeActivity.this, PaymentActivity.class);
+            startActivity(intent);
+            
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
