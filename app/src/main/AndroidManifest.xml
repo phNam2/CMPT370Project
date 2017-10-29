@@ -42,6 +42,11 @@
             android:name=".PaymentPaypalActivity" android:parentActivityName=".PaymentActivity"
             android:label="Payment">
         </activity>
+        <activity
+            android:name=".PaymentConfirm" android:parentActivityName=".PaymentActivity"
+            android:label="Payment">
+        </activity>
+
     </application>
 
 </manifest>

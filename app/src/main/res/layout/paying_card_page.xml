@@ -99,6 +99,7 @@
             android:layout_width="wrap_content"
             android:layout_height="68dp"
             android:layout_weight="0.35"
+            android:onClick="onButtonPayClick1"
             android:text="PROCEED" />
 
     </LinearLayout>
