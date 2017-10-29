@@ -1,5 +1,6 @@
 package com.example.peter.myhome;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -23,10 +24,22 @@ public class PaymentActivity extends AppCompatActivity {
     }
 
     public void onButtonCardClick(View v) {
-
+        card = (Button) findViewById(R.id.card_button);
+        card.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(PaymentActivity.this, PaymentCardActivity.class));
+            }
+        });
     }
 
     public void onButtonPaypalClick(View v) {
-
+        paypal = (Button) findViewById(R.id.paypal);
+        paypal.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(PaymentActivity.this, PaymentPaypalActivity.class));
+            }
+        });
     }
 }

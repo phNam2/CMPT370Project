@@ -33,6 +33,12 @@
         <activity
             android:name=".PaymentActivity">
         </activity>
+        <activity
+            android:name=".PaymentCardActivity">
+        </activity>
+        <activity
+            android:name=".PaymentPaypalActivity">
+        </activity>
     </application>
 
 </manifest>

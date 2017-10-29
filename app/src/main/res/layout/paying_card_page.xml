@@ -46,7 +46,7 @@
             android:id="@+id/textView9"
             android:layout_width="127dp"
             android:layout_height="wrap_content"
-            android:text="Card number" />
+            android:text="Card number:" />
 
         <EditText
             android:id="@+id/card_number"
@@ -66,7 +66,7 @@
             android:id="@+id/textView8"
             android:layout_width="77dp"
             android:layout_height="wrap_content"
-            android:text="Exp Date" />
+            android:text="Exp Date:" />
 
         <EditText
             android:id="@+id/card_date"

@@ -49,9 +49,8 @@
             android:text="Credit/Debit Card" />
 
         <LinearLayout
-            android:layout_width="85dp"
+            android:layout_width="68dp"
             android:layout_height="match_parent"
-            android:layout_weight="2.90"
             android:orientation="vertical"></LinearLayout>
 
         <Button
@@ -59,6 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="22.32"
+            android:onClick="onButtonPaypalClick"
             android:text="Paypal"
             tools:onClick="onButtonPaypalClick" />
     </LinearLayout>
