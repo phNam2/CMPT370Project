@@ -31,13 +31,16 @@
             android:name=".MaintenanceActivity">
         </activity>
         <activity
-            android:name=".PaymentActivity">
+            android:name=".PaymentActivity"
+            android:label="MyHome Payment">
         </activity>
         <activity
-            android:name=".PaymentCardActivity">
+            android:name=".PaymentCardActivity" android:parentActivityName=".PaymentActivity"
+            android:label="Payment">
         </activity>
         <activity
-            android:name=".PaymentPaypalActivity">
+            android:name=".PaymentPaypalActivity" android:parentActivityName=".PaymentActivity"
+            android:label="Payment">
         </activity>
     </application>
 

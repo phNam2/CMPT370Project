@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.11"
-        android:text="PAY WITH CREDIT/DEBIT CARD"
+        android:text="PAY WITH DEBIT / CREDIT CARD"
         android:textAlignment="center"
         android:textSize="24sp"
         tools:textAlignment="center"
@@ -57,7 +57,8 @@
             android:layout_column="1"
             android:layout_row="0"
             android:ems="10"
-            android:inputType="number" />
+            android:inputType="number"
+            android:maxLength="16" />
     </GridLayout>
 
     <GridLayout
@@ -72,11 +73,12 @@
 
         <EditText
             android:id="@+id/card_date"
-            android:layout_width="72dp"
+            android:layout_width="62dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="MMYY"
-            android:inputType="number" />
+            android:inputType="number"
+            android:maxLength="4" />
     </GridLayout>
 
     <LinearLayout
@@ -86,30 +88,19 @@
         android:weightSum="1"
         android:layout_weight="0.27">
 
-        <Button
-            android:id="@+id/pay_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.47"
-            android:text="PROCEED" />
-
         <LinearLayout
             android:layout_width="57dp"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_weight="0.58"></LinearLayout>
+            android:layout_weight="0.62"
+            android:orientation="vertical"></LinearLayout>
 
         <Button
-            android:id="@+id/cancel_button"
-            android:layout_width="131dp"
-            android:layout_height="wrap_content"
-            android:text="CANCEL" />
+            android:id="@+id/pay_button"
+            android:layout_width="wrap_content"
+            android:layout_height="68dp"
+            android:layout_weight="0.35"
+            android:text="PROCEED" />
+
     </LinearLayout>
 
-    <Button
-        android:id="@+id/paypal_change"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.11"
-        android:text="PAY WITH PAYPAL" />
 </LinearLayout>
