@@ -8,10 +8,10 @@
         android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="0.15"
         android:text="PAY WITH PAYPAL"
         android:textAlignment="center"
-        android:textSize="36sp"
-        android:layout_weight="0.15" />
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/textView11"

@@ -11,6 +11,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.11"
         android:text="PAY WITH CREDIT/DEBIT CARD"
+        android:textAlignment="center"
+        android:textSize="24sp"
         tools:textAlignment="center"
         tools:textSize="36sp" />
 
