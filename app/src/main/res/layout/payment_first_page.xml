@@ -115,6 +115,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
+        <Button
+            android:id="@+id/testingID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.04"
+            android:onClick="onTestClick"
+            android:text="phpTest" />
     </LinearLayout>
 
 </LinearLayout>
