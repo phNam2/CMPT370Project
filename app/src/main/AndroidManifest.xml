@@ -46,6 +46,11 @@
             android:name=".PaymentConfirm" android:parentActivityName=".PaymentActivity"
             android:label="Payment">
         </activity>
+        <activity
+            android:name=".DatabaseTestingActivity" android:parentActivityName=".PaymentActivity"
+            android:label="Testing">
+        </activity>
+
 
     </application>
 
