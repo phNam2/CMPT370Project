@@ -15,10 +15,10 @@ public class IP_Address {
      */
 
     // NAM wifi web address
-    public static String adress = "192.168.0.10";
+    //public static String adress = "192.168.0.10";
 
     //University secure wifi web address
-    //public static String adress = "10.227.129.175";
+    public static String adress = "10.227.135.178";
 
     public static String getIPAdress () {
 
