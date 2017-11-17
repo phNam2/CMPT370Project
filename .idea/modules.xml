@@ -3,8 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CMPT370GroupProject.iml" filepath="$PROJECT_DIR$/CMPT370GroupProject.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ProjectRepository.iml" filepath="$PROJECT_DIR$/ProjectRepository.iml" />
+      <module fileurl="file://F:\AndroidStudioProjects\370\CMPT370GroupProject\CMPT370GroupProject.iml" filepath="F:\AndroidStudioProjects\370\CMPT370GroupProject\CMPT370GroupProject.iml" />
+      <module fileurl="file://F:\AndroidStudioProjects\370\CMPT370GroupProject\ProjectRepository.iml" filepath="F:\AndroidStudioProjects\370\CMPT370GroupProject\ProjectRepository.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://F:\AndroidStudioProjects\370\CMPT370GroupProject\app\app.iml" filepath="F:\AndroidStudioProjects\370\CMPT370GroupProject\app\app.iml" />
     </modules>
   </component>
 </project>
