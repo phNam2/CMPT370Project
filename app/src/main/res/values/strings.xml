@@ -23,4 +23,6 @@
     <string name="title_reviewactivity_detail">reviewActivity Detail</string>
     <string name="title_reviewacti_list">Items</string>
     <string name="title_reviewacti_detail">ReviewActi Detail</string>
+    <string name="login">Sign In</string>
+    <string name="password">Password</string>
 </resources>
