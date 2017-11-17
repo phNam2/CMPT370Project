@@ -28,31 +28,48 @@
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".MaintenanceActivity">
-        </activity>
+        <activity android:name=".MaintenanceActivity" />
         <activity
             android:name=".PaymentActivity"
-            android:label="MyHome Payment">
+            android:label="MyHome Payment" />
+        <activity
+            android:name=".PaymentCardActivity"
+            android:label="Payment"
+            android:parentActivityName=".PaymentActivity" />
+        <activity
+            android:name=".PaymentPaypalActivity"
+            android:label="Payment"
+            android:parentActivityName=".PaymentActivity" />
+        <activity
+            android:name=".PaymentConfirm"
+            android:label="Payment"
+            android:parentActivityName=".PaymentActivity" />
+        <activity
+            android:name=".ReviewActivity"
+            android:label="@string/title_activity_review"
+            android:parentActivityName=".HomeActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.peter.myhome.HomeActivity" />
         </activity>
         <activity
-            android:name=".PaymentCardActivity" android:parentActivityName=".PaymentActivity"
-            android:label="Payment">
+            android:name=".ReviewHistoryActivity"
+            android:label="@string/title_activity_review_history"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.peter.myhome.HomeActivity" />
         </activity>
-        <activity
-            android:name=".PaymentPaypalActivity" android:parentActivityName=".PaymentActivity"
-            android:label="Payment">
-        </activity>
-        <activity
-            android:name=".PaymentConfirm" android:parentActivityName=".PaymentActivity"
-            android:label="Payment">
-        </activity>
+<<<<<<< HEAD
         <activity
             android:name=".DatabaseTestingActivity" android:parentActivityName=".PaymentActivity"
             android:label="Testing">
         </activity>
 
 
+=======
+>>>>>>> feature/Review
     </application>
 
 </manifest>

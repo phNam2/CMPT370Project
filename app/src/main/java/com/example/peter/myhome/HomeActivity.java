@@ -99,8 +99,12 @@ public class HomeActivity extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_slideshow) {
+            Intent intent = new Intent(HomeActivity.this, ReviewActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_manage) {
+            Intent intent = new Intent(HomeActivity.this, ReviewHistoryActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_share) {
 
