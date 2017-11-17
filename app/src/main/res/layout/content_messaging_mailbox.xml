@@ -30,15 +30,6 @@
             android:text="Sync" />
 
         <Button
-            android:id="@+id/NewMessageBTN"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_toLeftOf="@+id/SyncMessagesBTN"
-            android:layout_toStartOf="@+id/SyncMessagesBTN"
-            android:text="New" />
-
-        <Button
             android:id="@+id/DeleteSelectedBTN"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
