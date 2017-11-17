@@ -100,6 +100,9 @@ public class HomeActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_slideshow) {
 
+            Intent intent = new Intent(HomeActivity.this, MessagingMailboxActivity.class);
+            startActivity(intent);
+
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {

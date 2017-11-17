@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.peter.myhome.MessagingMailboxActivity"
+    tools:showIn="@layout/activity_messaging_mailbox">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="74dp" />
+
+        <Button
+            android:id="@+id/SyncMessagesBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:text="Sync" />
+
+        <Button
+            android:id="@+id/NewMessageBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/SyncMessagesBTN"
+            android:layout_toStartOf="@+id/SyncMessagesBTN"
+            android:text="New" />
+
+        <Button
+            android:id="@+id/DeleteSelectedBTN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/NewMessageBTN"
+            android:layout_toLeftOf="@+id/NewMessageBTN"
+            android:layout_toStartOf="@+id/NewMessageBTN"
+            android:text="Delete" />
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>
