@@ -18,7 +18,7 @@ public class IP_Address {
     //public static String adress = "192.168.0.10";
 
     //University secure wifi web address
-    public static String adress = "10.227.137.204";
+    public static String adress = "10.227.139.155";
 
     public static String getIPAdress () {
 
