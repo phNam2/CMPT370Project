@@ -55,6 +55,10 @@
         <activity
             android:name=".MessagingNewMessageActivity"
             android:label="@string/title_activity_messaging_new_message"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ReadMessageActivity"
+            android:label="@string/title_activity_read_message"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
