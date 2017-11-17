@@ -24,6 +24,10 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".ProfileActivity"
+            android:label="ProfileActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -58,7 +62,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.peter.myhome.ReviewActiListActivity" />
         </activity>
-        <activity android:name=".ReviewActivity"></activity>
+        <activity android:name=".ReviewActivity" />
+        <activity
+            android:name=".LandlordReviewingTenantsActivity"
+            android:label="@string/title_activity_landlord_reviewing_tenants"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
