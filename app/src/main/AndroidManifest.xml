@@ -61,15 +61,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.peter.myhome.HomeActivity" />
         </activity>
-<<<<<<< HEAD
+
         <activity
             android:name=".DatabaseTestingActivity" android:parentActivityName=".PaymentActivity"
             android:label="Testing">
         </activity>
 
 
-=======
->>>>>>> feature/Review
+
+
     </application>
 
 </manifest>
