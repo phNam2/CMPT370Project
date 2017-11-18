@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\Graeme\Documents\CMPT370GroupProject\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="C:\Users\Graeme\Documents\CMPT370GroupProject\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_5beff978e87091eb9b4e4c3e3ed2ba35d33df0f3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Graeme\Documents\CMPT370GroupProject\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="c39ae654c95cb064b8ab4d78e548bb576ff1382c">
+        <dex dex="C:\Users\Graeme\Documents\CMPT370GroupProject\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_4a94b8a72234fdeea3c8d4b3e74c9a04a2b3e183\classes.dex" />
+    </item>
+
+</items>
