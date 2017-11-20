@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 public class ProfileActivity extends AppCompatActivity {
@@ -30,8 +31,14 @@ public class ProfileActivity extends AppCompatActivity {
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
-
+        Button editProfileButton = (Button)findViewById(R.id.editProfile);
+        editProfileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), profileEditActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 

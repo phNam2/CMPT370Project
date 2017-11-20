@@ -27,67 +27,79 @@
     <TextView
         android:id="@+id/name"
         android:layout_width="165dp"
-        android:layout_height="32dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
         android:text="name"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profilePicture"
+        tools:ignore="HardcodedText"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1"
-        tools:ignore="HardcodedText" />
+        tools:layout_constraintTop_creator="1" />
 
-    <EditText
-        android:id="@+id/phoneNumber"
-        android:layout_width="0dp"
-        android:layout_height="42dp"
-        android:ems="10"
-        android:inputType="phone"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        android:layout_marginBottom="152dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp" />
-
-    <EditText
-        android:id="@+id/emailAddress"
-        android:layout_width="0dp"
-        android:layout_height="42dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneNumber"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <EditText
+    <TextView
         android:id="@+id/postalAddress"
+        android:layout_width="328dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="110dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Postal Address"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/emailAddress"
         android:layout_width="328dp"
         android:layout_height="42dp"
         android:layout_marginBottom="68dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:ems="10"
-        android:inputType="textPostalAddress"
+        android:text="Email Address"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/phoneNumber"
+        android:layout_width="328dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="152dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Phone Number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/editProfile"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="83dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:text="edit"
+        app:layout_constraintHorizontal_bias="0.131"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/profilePicture"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tenantRating"
+        android:layout_width="62dp"
+        android:layout_height="51dp"
+        android:text="Tenant Rating"
+        app:layout_constraintLeft_toRightOf="@+id/profilePicture"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="26dp"
+        app:layout_constraintHorizontal_bias="0.47" />
 
 </android.support.constraint.ConstraintLayout>
