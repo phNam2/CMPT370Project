@@ -30,10 +30,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.List;
 import android.widget.ImageButton;
 import android.content.Intent;
+
+import java.net.URL;
+
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -146,10 +152,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
         }
     }
-
-
-
-
 
 
     /**
@@ -306,11 +308,20 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         int IS_PRIMARY = 1;
     }
 
+    public void onClick (View view){
+        String email = mEmailView.getText().toString();
+        String password = mPasswordView.getText().toString();
+        String type = "login";
+        UserLoginTask usrLgnTsk = new UserLoginTask(email, password);
+        usrLgnTsk.execute();
+
+    }
+
     /**
      * Represents an asynchronous login/registration task used to authenticate
      * the user.
      */
-    public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
+    public class UserLoginTask extends AsyncTask<String, Void, Void> {
 
         private final String mEmail;
         private final String mPassword;
@@ -321,30 +332,42 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         }
 
         @Override
-        protected Boolean doInBackground(Void... params) {
+        protected Void doInBackground(String... params) {
             // TODO: attempt authentication against a network service.
-
-            try {
-                // Simulate network access.
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                return false;
+            String type = params[0];
+            String login_url = "http://10.0.2.2/login.php";
+            if(type.equals("login")) {
+                try {
+                    // Simulate network access.
+                    URL url = new URL(login_url);
+                    HttpURLConnection httpURLConn = (HttpURLConnection)url.openConnection();
+                    httpURLConn.setRequestMethod("POST");
+                    httpURLConn.setDoOutput(true);
+                    httpURLConn.setDoInput(true);
+                    
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch(MalformedURLException e) {
+                    e.printStackTrace();
+                } catch(IOException e){
+                    e.printStackTrace();
+                }
             }
-
             for (String credential : DUMMY_CREDENTIALS) {
                 String[] pieces = credential.split(":");
                 if (pieces[0].equals(mEmail)) {
                     // Account exists, return true if the password matches.
-                    return pieces[1].equals(mPassword);
+                    //return pieces[1].equals(mPassword);
                 }
             }
 
             // TODO: register the new account here.
-            return true;
+            return null;
         }
 
         @Override
-        protected void onPostExecute(final Boolean success) {
+        protected void onPostExecute(Void aVoid) {
             mAuthTask = null;
             showProgress(false);
 
