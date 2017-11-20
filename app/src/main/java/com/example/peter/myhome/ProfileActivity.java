@@ -12,6 +12,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+/*
+Graeme Gibbings
+Profile for the logged in user
+ */
 public class ProfileActivity extends AppCompatActivity {
 
     @Override
@@ -31,6 +35,9 @@ public class ProfileActivity extends AppCompatActivity {
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        /**
+         * button opens the profile edit activity
+         */
         Button editProfileButton = (Button)findViewById(R.id.editProfile);
         editProfileButton.setOnClickListener(new View.OnClickListener() {
             @Override

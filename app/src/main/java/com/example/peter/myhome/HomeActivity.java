@@ -88,9 +88,24 @@ public class HomeActivity extends AppCompatActivity
 
         if (id == R.id.nav_lease) {
             // Handle the camera action
+<<<<<<< HEAD
         } else if (id == R.id.nav_payment) {
 
         } else if (id == R.id.nav_review) {
+=======
+        } else if (id == R.id.nav_gallery) {
+
+            Intent intent = new Intent(HomeActivity.this, PaymentActivity.class);
+            startActivity(intent);
+
+        } else if (id == R.id.nav_slideshow) {
+            Intent intent = new Intent(HomeActivity.this, ReviewActivity.class);
+            startActivity(intent);
+
+        } else if (id == R.id.nav_manage) {
+            Intent intent = new Intent(HomeActivity.this, ReviewHistoryActivity.class);
+            startActivity(intent);
+>>>>>>> 363591ddf2cacb5d38eb285e530315e12ef6f756
 
         } else if (id == R.id.nav_message) {
 

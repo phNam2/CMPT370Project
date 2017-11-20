@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp">
+
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="RECEIPT"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        android:layout_weight="0.03" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_weight="0.01">
+
+        <GridLayout
+            android:layout_width="60dp"
+            android:layout_height="match_parent">
+
+        </GridLayout>
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.06"
+            android:text="Status: "
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Successfull"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:layout_weight="0.01"
+        android:orientation="horizontal">
+
+        <GridLayout
+            android:layout_width="60dp"
+            android:layout_height="match_parent">
+
+        </GridLayout>
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Tenant Name:  "
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/receipt_name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <GridLayout
+            android:layout_width="60dp"
+            android:layout_height="match_parent">
+
+        </GridLayout>
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.06"
+            android:text="Date:"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/receipt_date"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:orientation="horizontal">
+
+        <GridLayout
+            android:layout_width="60dp"
+            android:layout_height="match_parent">
+
+        </GridLayout>
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Amount:  "
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/receipt_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:orientation="horizontal">
+
+        <GridLayout
+            android:layout_width="60dp"
+            android:layout_height="match_parent">
+
+        </GridLayout>
+
+        <TextView
+            android:id="@+id/textView32"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Current balance:  "
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/receipt_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:orientation="horizontal">
+
+        <GridLayout
+            android:layout_width="60dp"
+            android:layout_height="match_parent">
+
+        </GridLayout>
+
+        <TextView
+            android:id="@+id/textView34"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Confirmation Code:  "
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/receipt_code"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="18sp" />
+    </LinearLayout>
+</LinearLayout>

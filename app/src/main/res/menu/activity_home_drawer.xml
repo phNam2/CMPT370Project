@@ -8,6 +8,7 @@
             android:icon="@android:drawable/ic_menu_view"
             android:title="Profile" />
         <item
+<<<<<<< HEAD
             android:id="@+id/nav_lease"
             android:icon="@android:drawable/ic_menu_info_details"
             android:title="Lease" />
@@ -19,6 +20,19 @@
             android:id="@+id/nav_review"
             android:icon="@android:drawable/ic_menu_edit"
             android:title="Review" />
+=======
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Payment" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Review" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Review History" />
+>>>>>>> 363591ddf2cacb5d38eb285e530315e12ef6f756
     </group>
 
     <item android:title="Communicate">
