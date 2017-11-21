@@ -88,7 +88,7 @@
         android:layout_height="65dp"
         android:background="@null"
         android:clickable="true"
-        android:onClick="onClick"
+        android:onClick="attemptLogin"
         app:srcCompat="@drawable/ic_action_name" />
 
 </LinearLayout>

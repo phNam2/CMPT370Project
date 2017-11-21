@@ -3,9 +3,11 @@ package com.example.peter.myhome;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.app.LoaderManager.LoaderCallbacks;
 
@@ -30,15 +32,24 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 import android.widget.ImageButton;
 import android.content.Intent;
 
 import java.net.URL;
+import android.app.AlertDialog.Builder;
+//import android.app.AlertDialog;
 
 
 import static android.Manifest.permission.READ_CONTACTS;
@@ -98,13 +109,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         });
 
 
-        final ImageButton button = (ImageButton) findViewById(R.id.login_button);
+        /*final ImageButton button = (ImageButton) findViewById(R.id.login_button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent homeIntent = new Intent(LoginActivity.this, HomeActivity.class);
                 LoginActivity.this.startActivity(homeIntent);
             }
-        });
+        });*/
 
         mLoginFormView = findViewById(R.id.login_form);
         //mProgressView = findViewById(R.id.login_progress);
@@ -201,8 +212,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
             showProgress(true);
-            mAuthTask = new UserLoginTask(email, password);
-            mAuthTask.execute((Void) null);
+            mAuthTask = new UserLoginTask(email, password, this);
+            mAuthTask.execute("login");
 
 
         }
@@ -210,12 +221,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     private boolean isEmailValid(String email) {
         //TODO: Replace this with your own logic
-        return email.contains("@");
+
+        return email.contains("g");
     }
 
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
-        return password.length() > 4;
+        return password.length() > 1;
     }
 
     /**
@@ -308,12 +320,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         int IS_PRIMARY = 1;
     }
 
-    public void onClick (View view){
+    public void onLogin (View view){
         String email = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
         String type = "login";
-        UserLoginTask usrLgnTsk = new UserLoginTask(email, password);
-        usrLgnTsk.execute();
+        UserLoginTask usrLgnTsk = new UserLoginTask(email, password, this);
+        usrLgnTsk.execute(type);
 
     }
 
@@ -321,56 +333,83 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * Represents an asynchronous login/registration task used to authenticate
      * the user.
      */
-    public class UserLoginTask extends AsyncTask<String, Void, Void> {
+    public class UserLoginTask extends AsyncTask<String, Void, String> {
 
         private final String mEmail;
         private final String mPassword;
+        private Context context;
 
-        UserLoginTask(String email, String password) {
+        protected AlertDialog.Builder alertDialogBuilder;
+
+        UserLoginTask(String email, String password, Context ctx) {
             mEmail = email;
             mPassword = password;
+            context = ctx;
         }
 
         @Override
-        protected Void doInBackground(String... params) {
+        protected String doInBackground(String... params) {
             // TODO: attempt authentication against a network service.
-            String type = params[0];
-            String login_url = "http://10.0.2.2/login.php";
+            String type = "login";//params[0];
+            String login_url = "http://172.16.1.67/login_2.php";
             if(type.equals("login")) {
                 try {
                     // Simulate network access.
                     URL url = new URL(login_url);
-                    HttpURLConnection httpURLConn = (HttpURLConnection)url.openConnection();
+                    HttpURLConnection httpURLConn = (HttpURLConnection) url.openConnection();
                     httpURLConn.setRequestMethod("POST");
                     httpURLConn.setDoOutput(true);
                     httpURLConn.setDoInput(true);
-                    
-                    Thread.sleep(2000);
-                } catch (InterruptedException e) {
+                    OutputStream outputStream = httpURLConn.getOutputStream();
+                    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
+                    String post_data = URLEncoder.encode("username", "UTF-8") + "=" + URLEncoder.encode(mEmail, "UTF-8") + "&"
+                            + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(mPassword, "UTF-8");
+                    bufferedWriter.write(post_data);
+                    bufferedWriter.flush();
+                    bufferedWriter.close();
+                    outputStream.close();
+                    InputStream inputStream = httpURLConn.getInputStream();
+                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
+                    String result = null;
+                    String line = null;
+                    while ((line = bufferedReader.readLine()) != null) {
+                        result += line;
+                    }
+                    bufferedReader.close();
+                    inputStream.close();
+                    httpURLConn.disconnect();
+                    return result;
+                } catch (MalformedURLException e) {
                     e.printStackTrace();
-                } catch(MalformedURLException e) {
-                    e.printStackTrace();
-                } catch(IOException e){
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
-            for (String credential : DUMMY_CREDENTIALS) {
+            /*for (String credential : DUMMY_CREDENTIALS) {
                 String[] pieces = credential.split(":");
                 if (pieces[0].equals(mEmail)) {
                     // Account exists, return true if the password matches.
                     //return pieces[1].equals(mPassword);
                 }
-            }
+            }*/
 
             // TODO: register the new account here.
             return null;
         }
 
+        protected void onPreExecute(){
+            alertDialogBuilder = new AlertDialog.Builder(context);
+            alertDialogBuilder.setTitle("Login Status");
+            super.onPreExecute();
+        }
+
         @Override
-        protected void onPostExecute(Void aVoid) {
+        protected void onPostExecute(String result) {
+            alertDialogBuilder.setMessage(result);
+            AlertDialog alertDialog = alertDialogBuilder.show();
             mAuthTask = null;
             showProgress(false);
-
+            /*
             if (success) {
                 Intent i = new Intent(getApplicationContext(), HomeActivity.class);
                 startActivity(i);
@@ -378,7 +417,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
                 mPasswordView.requestFocus();
-            }
+            }*/
         }
 
         @Override
