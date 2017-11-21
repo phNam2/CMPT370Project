@@ -102,6 +102,9 @@ public class HomeActivity extends AppCompatActivity
             Intent intent = new Intent(HomeActivity.this, ReviewActivity.class);
             startActivity(intent);
 
+            Intent intent = new Intent(HomeActivity.this, MessagingMailboxActivity.class);
+            startActivity(intent);
+
         } else if (id == R.id.nav_manage) {
             Intent intent = new Intent(HomeActivity.this, ReviewHistoryActivity.class);
             startActivity(intent);
