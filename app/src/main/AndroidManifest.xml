@@ -25,40 +25,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ProfileActivity"
-            android:label="ProfileActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MaintenanceActivity" />
         <activity
-            android:name=".ReviewActiListActivity"
-            android:label="@string/title_reviewacti_list"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ReviewActiDetailActivity"
-            android:label="@string/title_reviewacti_detail"
-            android:parentActivityName=".ReviewActiListActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.peter.myhome.ReviewActiListActivity" />
-        </activity>
-        <activity
-            android:name=".LandlordReviewingTenantsActivity"
-            android:label="@string/title_activity_landlord_reviewing_tenants"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".profileEditActivity"
-            android:label="@string/title_activity_profile_edit"
-            android:parentActivityName=".ProfileActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.peter.myhome.ProfileActivity" />
-=======
             android:name=".PaymentActivity"
             android:label="MyHome Payment" />
         <activity
@@ -73,6 +44,14 @@
             android:name=".PaymentConfirm"
             android:label="Payment"
             android:parentActivityName=".PaymentActivity" />
+        <activity
+            android:name=".ReviewActivity"
+            android:label="@string/title_activity_review"
+            android:parentActivityName=".HomeActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.peter.myhome.HomeActivity" />
+        </activity>
         <activity
             android:name=".ReviewHistoryActivity"
             android:label="@string/title_activity_review_history"

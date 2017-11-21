@@ -13,6 +13,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -33,10 +35,13 @@ public class HomeActivity extends AppCompatActivity
             }
         });
 
-//        protected void onCreate(Bundle savedInstanceState) {
-//            super.onCreate(savedInstanceState);
-//            setContentView(R.layout.activity_main);
-//        }
+        ImageButton maintenaneceButton = (ImageButton)findViewById(R.id.maintenance_button);
+        maintenaneceButton.setOnClickListener(new View.OnClickListener(){
+           @Override
+            public void onClick(View v){
+               startActivity(new Intent(HomeActivity.this, MaintenanceActivity.class));
+           }
+        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -86,13 +91,8 @@ public class HomeActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_lease) {
+        if (id == R.id.nav_camera) {
             // Handle the camera action
-<<<<<<< HEAD
-        } else if (id == R.id.nav_payment) {
-
-        } else if (id == R.id.nav_review) {
-=======
         } else if (id == R.id.nav_gallery) {
 
             Intent intent = new Intent(HomeActivity.this, PaymentActivity.class);
@@ -108,15 +108,10 @@ public class HomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_manage) {
             Intent intent = new Intent(HomeActivity.this, ReviewHistoryActivity.class);
             startActivity(intent);
->>>>>>> 363591ddf2cacb5d38eb285e530315e12ef6f756
 
-        } else if (id == R.id.nav_message) {
+        } else if (id == R.id.nav_share) {
 
-        } else if (id == R.id.nav_profile) {
-            Intent intent = new Intent(this,ProfileActivity.class);
-            startActivity(intent);
-            
-        } else if (id == R.id.nav_favourite) {
+        } else if (id == R.id.nav_send) {
 
         }
 
@@ -124,10 +119,4 @@ public class HomeActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-
-//    public void sendMessage(View view) {
-//
-//
-//  }
 }
