@@ -101,7 +101,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
                 if (id == R.id.login || id == EditorInfo.IME_NULL) {
-                    attemptLogin();
+                    
                     return true;
                 }
                 return false;
@@ -326,8 +326,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         String type = "login";
         UserLoginTask usrLgnTsk = new UserLoginTask(email, password, this);
         usrLgnTsk.execute(type);
-        Intent homeIntent = new Intent(LoginActivity.this, HomeActivity.class);
-        LoginActivity.this.startActivity(homeIntent);
+        //Intent homeIntent = new Intent(LoginActivity.this, HomeActivity.class);
+        //LoginActivity.this.startActivity(homeIntent);
     }
 
 }
@@ -341,6 +341,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         private final String mEmail;
         private final String mPassword;
         private Context context;
+
+        private TextView statusField;
 
         protected AlertDialog.Builder alertDialogBuilder;
 
@@ -362,21 +364,21 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                     String post_data = URLEncoder.encode("username", "UTF-8") + "=" + URLEncoder.encode(mEmail, "UTF-8") + "&"
                             + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(mPassword, "UTF-8");
 
-                    URLConnection connection = url.openConnection();
-                    connection.setDoOutput(true);
-                    //HttpURLConnection httpURLConn = (HttpURLConnection) url.openConnection();
-                    //httpURLConn.setRequestMethod("POST");
-                    //httpURLConn.setDoOutput(true);
-                    //httpURLConn.setDoInput(true);
-                    OutputStreamWriter wr = new OutputStreamWriter(connection.getOutputStream());
+                    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                    //connection.setDoOutput(true);
+                    HttpURLConnection httpURLConn = (HttpURLConnection) url.openConnection();
+                    httpURLConn.setRequestMethod("POST");
+                    httpURLConn.setDoOutput(true);
+                    httpURLConn.setDoInput(true);
+                    //OtputStreamWriter wr = new OutputStreamWriter(connection.getOutputStream());
+                    OutputStream outputStream = connection.getOutputStream();
+                    //wr.write( post_data );
+                    //wr.flush();
 
-                    wr.write( post_data );
-                    wr.flush();
-
-                    //httpURLConn.getOutputStream();
+                    httpURLConn.getOutputStream();
 
                     ///////////
-                    BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                    /*BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 
                     StringBuilder sb = new StringBuilder();
                     String line = null;
@@ -387,9 +389,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                         break;
                     }
 
-                    return sb.toString();
+                    return sb.toString();*/
                     ////////////
-                    /*BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
+                    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
                     bufferedWriter.write(post_data);
                     bufferedWriter.flush();
                     bufferedWriter.close();
@@ -404,7 +406,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                     bufferedReader.close();
                     inputStream.close();
                     httpURLConn.disconnect();
-                    return result;*/
+                    return result;
                 } catch(Exception e) {
                     e.printStackTrace();
                 }
@@ -427,17 +429,19 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             super.onPreExecute();
         }
 
-        @Override
+
         protected void onPostExecute(String result) {
-            alertDialogBuilder.setMessage(result);
-            AlertDialog alertDialog = alertDialogBuilder.show();
-            //mAuthTask = null;
-            //showProgress(false);
-            /*
+            this.statusField.setText("Login Successful");
+
+            //alertDialogBuilder.setMessage(result);
+            //AlertDialog alertDialog = alertDialogBuilder.show();
+            /*mAuthTask = null;
+            showProgress(false);
+
             if (success) {
-                Intent i = new Intent(getApplicationContext(), HomeActivity.class);
-                startActivity(i);
                 finish();
+                Intent homeIntent = new Intent(LoginActivity.this, HomeActivity.class);
+                LoginActivity.this.startActivity(homeIntent);
             } else {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
                 mPasswordView.requestFocus();
