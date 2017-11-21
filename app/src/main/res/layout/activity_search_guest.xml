@@ -20,7 +20,7 @@
         app:layout_constraintHorizontal_bias="0.157"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/back_button"
-        app:layout_constraintVertical_bias="0.049" />
+        app:layout_constraintVertical_bias="0.072" />
 
     <TextView
         android:id="@+id/child"
@@ -36,7 +36,7 @@
         app:layout_constraintHorizontal_bias="0.163"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/adult"
-        app:layout_constraintVertical_bias="0.118" />
+        app:layout_constraintVertical_bias="0.157" />
 
     <TextView
         android:id="@+id/pet"
@@ -52,12 +52,12 @@
         app:layout_constraintHorizontal_bias="0.151"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/child"
-        app:layout_constraintVertical_bias="0.096" />
+        app:layout_constraintVertical_bias="0.204" />
 
     <NumberPicker
         android:id="@+id/adult_num"
-        android:layout_width="92dp"
-        android:layout_height="37dp"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -71,8 +71,8 @@
 
     <NumberPicker
         android:id="@+id/child_num"
-        android:layout_width="94dp"
-        android:layout_height="36dp"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -95,10 +95,10 @@
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.822"
+        app:layout_constraintHorizontal_bias="0.826"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/child_num"
-        app:layout_constraintVertical_bias="0.073" />
+        app:layout_constraintVertical_bias="0.176" />
 
     <Button
         android:id="@+id/save_button"

@@ -30,7 +30,7 @@
     </FrameLayout>
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/reviewText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.01"
@@ -38,11 +38,12 @@
         android:inputType="textMultiLine" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.00"
         android:text="Button"
+        android:onClick="OnReview"
         tools:text="submit review" />
 
     <android.support.design.widget.BottomNavigationView
