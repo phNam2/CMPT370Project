@@ -20,10 +20,10 @@ import static com.example.peter.myhome.R.id.propertyName;
 
 public class TenantLease extends AppCompatActivity {
 
-    public EditText nameField;
-    public EditText addressField;
-    public EditText propertyNameField;
-    public Button submit;
+    private EditText nameField;
+    private EditText addressField;
+    private EditText propertyNameField;
+    private Button submit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -159,8 +159,8 @@ public class TenantLease extends AppCompatActivity {
      * Checks all editText fields and if they are not empty it will set button to be clickable
      *
      */
-    public void setButtonToClickable(){
-            if(true == validate(new EditText[]{nameField, addressField, propertyNameField})){
+    private void setButtonToClickable(){
+            if(validate(new EditText[]{nameField, addressField, propertyNameField})){
                 submit.setClickable(true);
             }
         }
