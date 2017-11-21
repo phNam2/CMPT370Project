@@ -24,4 +24,9 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_review_history">ReviewHistoryActivity</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="title_activity_search_date">SearchDateActivity</string>
+    <string name="title_activity_search_guest">SearchGuestActivity</string>
+    <string name="title_activity_search_e">SearchEActivity</string>
+    <string name="title_activity_search2">Search2Activity</string>
 </resources>
