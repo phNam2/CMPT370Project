@@ -38,29 +38,7 @@ public class SearchActivity extends AppCompatActivity {
         mListView = (ListView) findViewById(R.id.ResultView);
  //       listView = (ListView)findViewById(R.id.ResultView);
 
-        /*
-        for (int a=1; a<100; a++){
-            SearchResult s = new SearchResult();
-            s.setCity();
-            s.setCountry();
-            s.setId();
-            s.setPostalCode();
-            s.setStree();
-        }
-        */
-/*
-        public int getCount() {
-            return resultList.size();
-        }
 
-        public View getView(int position, View convertView, ViewGroup parent){
-            View view = null;
-            if (convertView == null){
-
-            }
-        }
-
-*/
 
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,mStrs);
