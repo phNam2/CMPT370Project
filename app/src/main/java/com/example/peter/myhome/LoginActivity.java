@@ -41,6 +41,7 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
@@ -49,7 +50,6 @@ import android.content.Intent;
 
 import java.net.URL;
 import android.app.AlertDialog.Builder;
-//import android.app.AlertDialog;
 
 
 import static android.Manifest.permission.READ_CONTACTS;
@@ -107,7 +107,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 return false;
             }
         });
-
 
         /*final ImageButton button = (ImageButton) findViewById(R.id.login_button);
         button.setOnClickListener(new View.OnClickListener() {
@@ -320,20 +319,24 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         int IS_PRIMARY = 1;
     }
 
-    public void onLogin (View view){
+
+    public void onClick (View view) {
         String email = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
         String type = "login";
         UserLoginTask usrLgnTsk = new UserLoginTask(email, password, this);
         usrLgnTsk.execute(type);
-
+        Intent homeIntent = new Intent(LoginActivity.this, HomeActivity.class);
+        LoginActivity.this.startActivity(homeIntent);
     }
+
+}
 
     /**
      * Represents an asynchronous login/registration task used to authenticate
      * the user.
      */
-    public class UserLoginTask extends AsyncTask<String, Void, String> {
+    class UserLoginTask extends AsyncTask<String, Void, String> {
 
         private final String mEmail;
         private final String mPassword;
@@ -356,14 +359,37 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 try {
                     // Simulate network access.
                     URL url = new URL(login_url);
-                    HttpURLConnection httpURLConn = (HttpURLConnection) url.openConnection();
-                    httpURLConn.setRequestMethod("POST");
-                    httpURLConn.setDoOutput(true);
-                    httpURLConn.setDoInput(true);
-                    OutputStream outputStream = httpURLConn.getOutputStream();
-                    BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
                     String post_data = URLEncoder.encode("username", "UTF-8") + "=" + URLEncoder.encode(mEmail, "UTF-8") + "&"
                             + URLEncoder.encode("password", "UTF-8") + "=" + URLEncoder.encode(mPassword, "UTF-8");
+
+                    URLConnection connection = url.openConnection();
+                    connection.setDoOutput(true);
+                    //HttpURLConnection httpURLConn = (HttpURLConnection) url.openConnection();
+                    //httpURLConn.setRequestMethod("POST");
+                    //httpURLConn.setDoOutput(true);
+                    //httpURLConn.setDoInput(true);
+                    OutputStreamWriter wr = new OutputStreamWriter(connection.getOutputStream());
+
+                    wr.write( post_data );
+                    wr.flush();
+
+                    //httpURLConn.getOutputStream();
+
+                    ///////////
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+
+                    StringBuilder sb = new StringBuilder();
+                    String line = null;
+
+                    // Read Server Response
+                    while((line = reader.readLine()) != null) {
+                        sb.append(line);
+                        break;
+                    }
+
+                    return sb.toString();
+                    ////////////
+                    /*BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
                     bufferedWriter.write(post_data);
                     bufferedWriter.flush();
                     bufferedWriter.close();
@@ -378,10 +404,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                     bufferedReader.close();
                     inputStream.close();
                     httpURLConn.disconnect();
-                    return result;
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
+                    return result;*/
+                } catch(Exception e) {
                     e.printStackTrace();
                 }
             }
@@ -407,8 +431,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         protected void onPostExecute(String result) {
             alertDialogBuilder.setMessage(result);
             AlertDialog alertDialog = alertDialogBuilder.show();
-            mAuthTask = null;
-            showProgress(false);
+            //mAuthTask = null;
+            //showProgress(false);
             /*
             if (success) {
                 Intent i = new Intent(getApplicationContext(), HomeActivity.class);
@@ -422,9 +446,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         @Override
         protected void onCancelled() {
-            mAuthTask = null;
-            showProgress(false);
+            //mAuthTask = null;
+            //showProgress(false);
         }
     }
-}
+
 
