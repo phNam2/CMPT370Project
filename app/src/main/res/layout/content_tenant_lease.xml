@@ -9,7 +9,7 @@
     tools:showIn="@layout/activity_tenant_lease">
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -19,7 +19,7 @@
         tools:layout_editor_absoluteY="30dp" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -29,7 +29,7 @@
         tools:layout_editor_absoluteY="105dp" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/propertyName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
