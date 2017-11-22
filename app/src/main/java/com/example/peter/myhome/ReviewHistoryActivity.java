@@ -7,11 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import static com.example.peter.myhome.R.id.reviewText;
-
 public class ReviewHistoryActivity extends AppCompatActivity {
 
-    private int propertyID;
+    private String propertyID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +31,7 @@ public class ReviewHistoryActivity extends AppCompatActivity {
 
     public void OnReviewHistory(View view) {
 
-        propertyID = 1;
+        propertyID = "1";
         String type = "AddReview";
 
         BackGroundWorkerForReviewHistory backgroundWorkerFRH = new BackGroundWorkerForReviewHistory(this);

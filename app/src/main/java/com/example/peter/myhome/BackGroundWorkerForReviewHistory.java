@@ -32,12 +32,12 @@ public class BackGroundWorkerForReviewHistory extends AsyncTask<String,Void,Stri
         String type = params[0];
 
         //Connect to local host
-        String login_url = "http://"+ IP_Address.getIPAdress() + "/insert_review_test.php";
+        String login_url = "http://"+ IP_Address.getIPAdress() + "/review_history_test.php";
 
 
         if (type.equals("AddReview")) {
             try {
-                String reviewT = params[1];
+                String propertyID = params[1];
                 URL url = new URL(login_url);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
@@ -45,7 +45,7 @@ public class BackGroundWorkerForReviewHistory extends AsyncTask<String,Void,Stri
                 httpURLConnection.setDoInput(true);
                 OutputStream outputStream = httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
-                String post_data = URLEncoder.encode("Review", "UTF-8") + "=" + URLEncoder.encode(reviewT, "UTF-8");
+                String post_data = URLEncoder.encode("property_id", "UTF-8") + "=" + URLEncoder.encode(propertyID, "UTF-8");
                 bufferedWriter.write(post_data);
                 bufferedWriter.flush();
                 bufferedWriter.close();
