@@ -77,6 +77,12 @@
             android:name=".SearchGuestActivity"
             android:label="@string/title_activity_search_guest"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MessagingMailboxActivity"
+            android:label="MyHome Payment" />
+        <activity
+            android:name=".MessagingNewMessageActivity"
+            android:label="MyHome Payment" />
     </application>
 
 </manifest>
