@@ -32,7 +32,7 @@ public class ReviewHistoryActivity extends AppCompatActivity {
     public void OnReviewHistory(View view) {
 
         propertyID = "1";
-        String type = "AddReview";
+        String type = "ReviewHistory";
 
         BackGroundWorkerForReviewHistory backgroundWorkerFRH = new BackGroundWorkerForReviewHistory(this);
         backgroundWorkerFRH.execute(type, propertyID);
