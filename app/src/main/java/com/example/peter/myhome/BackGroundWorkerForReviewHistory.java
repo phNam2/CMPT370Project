@@ -35,7 +35,7 @@ public class BackGroundWorkerForReviewHistory extends AsyncTask<String,Void,Stri
         String login_url = "http://"+ IP_Address.getIPAdress() + "/review_history_test.php";
 
 
-        if (type.equals("ReviewHistory")) {
+        if (type.equals("AddReview")) {
             try {
                 String propertyID = params[1];
                 URL url = new URL(login_url);
