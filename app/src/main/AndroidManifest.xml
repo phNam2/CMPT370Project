@@ -27,9 +27,9 @@
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".MaintenanceActivity">
-        </activity>
+        <activity android:name=".MaintenanceActivity" />
+        <activity android:name=".NewMaintenanceActivity" />
+        <activity android:name=".MaintenanceHistoryActivity"></activity>
     </application>
 
 </manifest>
