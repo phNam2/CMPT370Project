@@ -9,6 +9,8 @@ import android.view.View;
 
 public class ReviewHistoryActivity extends AppCompatActivity {
 
+    private String propertyID;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +27,15 @@ public class ReviewHistoryActivity extends AppCompatActivity {
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    public void OnReviewHistory(View view) {
+
+        propertyID = "1";
+        String type = "AddReview";
+
+        BackGroundWorkerForReviewHistory backgroundWorkerFRH = new BackGroundWorkerForReviewHistory(this);
+        backgroundWorkerFRH.execute(type, propertyID);
     }
 
 }
