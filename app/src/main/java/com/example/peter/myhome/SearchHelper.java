@@ -19,7 +19,8 @@ public abstract class SearchHelper extends SQLiteOpenHelper {
     }
 
     public SearchResult findResult(String location){
-        String query = "Select * From " + Property_Address + "Where" + Street/city/country = location;
+        String query =null;
+        //"Select * From " + Property_Address + "Where" + Street/city/country = location;
 
         SQLiteDatabase db = this.getWritableDatabase();
 
