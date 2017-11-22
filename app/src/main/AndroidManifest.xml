@@ -6,8 +6,7 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    "
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -29,54 +28,8 @@
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MaintenanceActivity" />
-        <activity
-            android:name=".PaymentActivity"
-            android:label="MyHome Payment" />
-        <activity
-            android:name=".PaymentCardActivity"
-            android:label="Payment"
-            android:parentActivityName=".PaymentActivity" />
-        <activity
-            android:name=".PaymentPaypalActivity"
-            android:label="Payment"
-            android:parentActivityName=".PaymentActivity" />
-        <activity
-            android:name=".PaymentConfirm"
-            android:label="Payment"
-            android:parentActivityName=".PaymentActivity" />
-        <activity
-            android:name=".ReviewActivity"
-            android:label="@string/title_activity_review"
-            android:parentActivityName=".HomeActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.peter.myhome.HomeActivity" />
-        </activity>
-        <activity
-            android:name=".ReviewHistoryActivity"
-            android:label="@string/title_activity_review_history"
-            android:parentActivityName=".HomeActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.peter.myhome.HomeActivity" />
-        </activity>
-        <activity
-            android:name=".DatabaseTestingActivity"
-            android:label="Testing"
-            android:parentActivityName=".PaymentActivity" />
-        <activity
-            android:name=".SearchActivity"
-            android:label="@string/title_activity_search"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".SearchDateActivity"
-            android:label="@string/title_activity_search_date"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".SearchGuestActivity"
-            android:label="@string/title_activity_search_guest"
-            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".NewMaintenanceActivity" />
+        <activity android:name=".MaintenanceHistoryActivity"></activity>
     </application>
 
 </manifest>

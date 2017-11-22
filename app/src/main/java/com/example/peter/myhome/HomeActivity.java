@@ -35,6 +35,7 @@ public class HomeActivity extends AppCompatActivity
             }
         });
 
+        // Maintenance button
         ImageButton maintenaneceButton = (ImageButton)findViewById(R.id.maintenance_button);
         maintenaneceButton.setOnClickListener(new View.OnClickListener(){
            @Override
