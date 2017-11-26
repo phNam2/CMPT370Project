@@ -18,8 +18,9 @@ import android.widget.TextView;
 
 public class A_jdbcActivity extends Activity implements Runnable{
 
-    private String hiduke="";
-    private int price=0;
+    private int ID = 0;
+    private String FN="";
+    private String LN="";
     private String errmsg="";
 
     public void run() {
@@ -29,22 +30,24 @@ public class A_jdbcActivity extends Activity implements Runnable{
         try{
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection
-                    ("jdbc:mysql://10.0.2.2:3306/stock","root","root");
+                    ("jdbc:mysql://db.cs.usask.ca:3306/cmpt370_magic8b","cmpt370_magic8b","p2z9ZhNfoKTOFsXpqAnP");
             try{
                 String sql;
                 //	  sql
                 //	  = "SELECT title,year_made FROM movies WHERE year_made >= ? AND year_made <= ?";
                 sql
-                        = "SELECT hiduke,jikan,code,price FROM table_stock";
+                        = "SELECT Applicant_ID,FName,LName FROM Applicants";
                 PreparedStatement prest = con.prepareStatement(sql);
                 //prest.setInt(1,1980);
                 //prest.setInt(2,2004);
                 ResultSet rs = prest.executeQuery();
                 while (rs.next()){
-                    hiduke = rs.getString(1);
-                    price = rs.getInt(4);
+
+                    ID = rs.getInt("Applicant_ID");
+                    FN = rs.getString("FName");
+                    LN = rs.getString("LName");
                     count++;
-                    System.out.println(hiduke + "\t" + "- " + price);
+                    System.out.println(ID + "\t" + "- " + FN + "\t" + "- " + LN);
                 }
                 System.out.println("Number of records: " + count);
                 prest.close();
@@ -68,7 +71,7 @@ public class A_jdbcActivity extends Activity implements Runnable{
         public void handleMessage(Message msg) {
 
             TextView textView = (TextView) findViewById(R.id.textView0);
-            textView.setText("hiduke="+hiduke+" price="+price+" "+errmsg);
+            textView.setText(" ID="+ID+ " First Name="+FN+" Last Name="+LN+" "+errmsg);
         }
     };
 
@@ -79,11 +82,8 @@ public class A_jdbcActivity extends Activity implements Runnable{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.a_jdbc);
 
-
         Thread thread = new Thread(this);
         thread.start();
-
-
     }
 
 
