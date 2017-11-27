@@ -52,4 +52,14 @@ public class PaymentActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void onTestClick2(View v) {
+        Button testing = (Button) findViewById(R.id.testingID);
+        testing.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(PaymentActivity.this, A_jdbcActivity.class));
+            }
+        });
+    }
 }

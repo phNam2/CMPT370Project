@@ -1,1 +1,2 @@
 include ':app', ':junit-4.12'
+include ':app', ':mysql-5.1'
