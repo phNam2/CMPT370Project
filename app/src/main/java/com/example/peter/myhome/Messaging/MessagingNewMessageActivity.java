@@ -1,4 +1,4 @@
-package com.example.peter.myhome;
+package com.example.peter.myhome.Messaging;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -7,12 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-public class ReadMessageActivity extends AppCompatActivity {
+import com.example.peter.myhome.R;
+
+public class MessagingNewMessageActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_read_message);
+        setContentView(R.layout.activity_messaging_new_message);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

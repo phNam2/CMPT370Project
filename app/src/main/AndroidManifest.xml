@@ -82,9 +82,9 @@
             android:label="@string/title_activity_search_guest"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".MessagingMailboxActivity" />
+            android:name=".Messaging.MessagingMailboxActivity" />
         <activity
-            android:name=".MessagingNewMessageActivity"/>
+            android:name=".Messaging.MessagingNewMessageActivity"/>
         <activity
             android:name=".A_jdbcActivity" />
     </application>

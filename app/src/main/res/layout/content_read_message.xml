@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.peter.myhome.ReadMessageActivity"
+    tools:context="com.example.peter.myhome.Messaging.ReadMessageActivity"
     tools:showIn="@layout/activity_read_message">
 
     <RelativeLayout
