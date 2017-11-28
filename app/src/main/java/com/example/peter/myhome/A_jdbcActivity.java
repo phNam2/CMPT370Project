@@ -24,7 +24,7 @@ public class A_jdbcActivity extends Activity implements Runnable{
     private String errmsg="";
 
     public void run() {
-        System.out.println("Select Records Example by using the Prepared Statement!");
+
         Connection con = null;
         int count = 0;
         try{
@@ -47,7 +47,6 @@ public class A_jdbcActivity extends Activity implements Runnable{
                     FN = rs.getString("FName");
                     LN = rs.getString("LName");
                     count++;
-                    System.out.println(ID + "\t" + "- " + FN + "\t" + "- " + LN);
                 }
                 System.out.println("Number of records: " + count);
                 prest.close();
