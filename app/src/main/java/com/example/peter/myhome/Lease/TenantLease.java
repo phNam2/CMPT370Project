@@ -1,4 +1,4 @@
-package com.example.peter.myhome;
+package com.example.peter.myhome.Lease;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
+
+import com.example.peter.myhome.R;
 
 import static com.example.peter.myhome.R.id.address;
 import static com.example.peter.myhome.R.id.name;
