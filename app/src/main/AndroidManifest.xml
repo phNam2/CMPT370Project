@@ -9,10 +9,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-
     <application
         android:name="android.support.multidex.MultiDexApplication"
-
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -49,6 +47,14 @@
             android:label="Payment"
             android:parentActivityName=".PaymentActivity" />
         <activity
+            android:name=".Lease.TenantLease"
+            android:label="Lease.TenantLease"
+            android:parentActivityName="Lease.TenantLease" />
+        <activity
+            android:name=".Lease.TenantLeaseConfirm"
+            android:label="Lease.TenantLeaseConfirm"
+            android:parentActivityName="Lease.TenantLeaseConfirm" />
+        <activity
             android:name=".ReviewActivity"
             android:label="@string/title_activity_review"
             android:parentActivityName=".HomeActivity">
@@ -81,12 +87,13 @@
             android:name=".SearchGuestActivity"
             android:label="@string/title_activity_search_guest"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MessagingMailboxActivity" />
+        <activity android:name=".MessagingNewMessageActivity" />
+        <activity android:name=".A_jdbcActivity" />
         <activity
-            android:name=".MessagingMailboxActivity" />
-        <activity
-            android:name=".MessagingNewMessageActivity"/>
-        <activity
-            android:name=".A_jdbcActivity" />
+            android:name=".Lease.LeaseDB"
+            android:label="@string/title_activity_lease_db"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

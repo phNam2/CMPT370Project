@@ -16,6 +16,8 @@ import android.view.MenuItem;
 import android.widget.ImageButton;
 import android.support.v7.widget.SearchView;
 
+import com.example.peter.myhome.Lease.TenantLease;
+
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -112,7 +114,11 @@ public class HomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_send) {
             Intent intent = new Intent(HomeActivity.this, MessagingMailboxActivity.class);
             startActivity(intent);
+        } else if (id == R.id.nav_lease) {
+            Intent intent = new Intent(HomeActivity.this, TenantLease.class);
+            startActivity(intent);
         }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

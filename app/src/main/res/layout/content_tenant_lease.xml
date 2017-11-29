@@ -8,13 +8,20 @@
     tools:context="com.example.peter.myhome.Lease.TenantLease"
     tools:showIn="@layout/activity_tenant_lease">
 
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp"
+        android:weightSum="1">
     <EditText
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="Name: "
         tools:layout_editor_absoluteX="30dp"
         tools:layout_editor_absoluteY="30dp" />
 
@@ -24,7 +31,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Address"
+        android:text="Address: "
         tools:layout_editor_absoluteX="30dp"
         tools:layout_editor_absoluteY="105dp" />
 
@@ -34,9 +41,11 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Property Name"
+        android:text="Property Name: "
         tools:layout_editor_absoluteX="30dp"
         tools:layout_editor_absoluteY="186dp" />
+
+
 
     <RadioButton
         android:id="@+id/yes"
@@ -56,6 +65,9 @@
         android:layout_marginRight="147dp"
         app:layout_constraintRight_toRightOf="parent"
         android:onClick="onRadioButtonClicked"/>
+
+    </LinearLayout>
+
 
     <Button
         android:id="@+id/submit"
