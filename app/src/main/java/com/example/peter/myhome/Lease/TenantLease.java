@@ -127,15 +127,15 @@ public class TenantLease extends AppCompatActivity {
 
 
 
-
- /*   public void onButtonSubmit(View v) {
+/*
+    public void onButtonSubmit(View v) {
             Button submit = (Button) findViewById(R.id.submit);
             submit.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
                     startActivity(new Intent(TenantLease.this, TenantLeaseConfirm.class));
                 }
-            });
+            })
 */
         //still need method for sending submission to database once
         //database connection is working

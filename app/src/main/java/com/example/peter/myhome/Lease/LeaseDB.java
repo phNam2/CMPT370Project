@@ -19,7 +19,7 @@ public class LeaseDB extends Activity implements Runnable{
     private int ID = 0;
     private String FN="";
     private String LN="";
-    //private RadioButton ANS;
+    private RadioButton ANS;
     private String errmsg="";
 
     public void run() {
@@ -35,7 +35,7 @@ public class LeaseDB extends Activity implements Runnable{
                 //	  sql
                 //	  = "SELECT title,year_made FROM movies WHERE year_made >= ? AND year_made <= ?";
                 sql
-                        = "INSERT INTO Lease (name, address, propertyName, response)";
+                        = "INSERT INTO Lease (name, address, propertyName, response)" + "VALUES (? + ? + ? + ?)";
                 PreparedStatement prest = con.prepareStatement(sql);
                 //prest.setInt(1,1980);
                 //prest.setInt(2,2004);
@@ -77,23 +77,16 @@ public class LeaseDB extends Activity implements Runnable{
 
 
 
-    public class LeaseDB extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lease_db);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.a_jdbc);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        Thread thread = new Thread(this);
+        thread.start();
     }
 
+
 }
+
+
