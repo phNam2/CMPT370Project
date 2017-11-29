@@ -87,6 +87,10 @@
             android:name=".MessagingNewMessageActivity"/>
         <activity
             android:name=".A_jdbcActivity" />
+        <activity
+            android:name=".PaymentReceipt"
+            android:label="Payment"
+            android:parentActivityName=".PaymentActivity" />
     </application>
 
 </manifest>
