@@ -23,16 +23,17 @@ import java.sql.SQLException;
 
 public class PaymentActivity extends AppCompatActivity implements Runnable {
 
+    public static String method = "";
     public static int currentBalance = 0;
     public static int amount = 0;
     private String errmsg="";
+    public static Connection con = null;
 
     Button history, card, paypal;
 
 
     public void run() {
 
-        Connection con = null;
         try{
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection
@@ -101,6 +102,7 @@ public class PaymentActivity extends AppCompatActivity implements Runnable {
             Toast.makeText(this, "Please enter the amount to pay first", Toast.LENGTH_LONG).show();
         }
         else {
+            method = "Credit_Debit Card";
             amount = Integer.parseInt(edit.getText().toString());
 
             card = (Button) findViewById(R.id.card_button);
@@ -121,6 +123,7 @@ public class PaymentActivity extends AppCompatActivity implements Runnable {
             Toast.makeText(this, "Please enter the amount to pay first", Toast.LENGTH_LONG).show();
         }
         else {
+            method = "Paypal";
             amount = Integer.parseInt(edit.getText().toString());
 
             paypal = (Button) findViewById(R.id.paypal);
