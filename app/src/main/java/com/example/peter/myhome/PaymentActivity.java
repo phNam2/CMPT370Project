@@ -67,6 +67,16 @@ public class PaymentActivity extends AppCompatActivity {
 
     }
 
+    public void homepageClick(View v) {
+        Button testing = (Button) findViewById(R.id.testingID);
+        testing.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                startActivity(new Intent(PaymentActivity.this, HomeActivity.class));
+            }
+        });
+    }
+
     public void onTestClick(View v) {
         Button testing = (Button) findViewById(R.id.testingID);
         testing.setOnClickListener(new View.OnClickListener(){

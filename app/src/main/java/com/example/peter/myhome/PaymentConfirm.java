@@ -25,12 +25,25 @@ public class PaymentConfirm extends AppCompatActivity {
 
     public void onToReceipt(View v) {
         Button testing = (Button) findViewById(R.id.confirm_button);
-        testing.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                startActivity(new Intent(PaymentConfirm.this, PaymentReceipt.class));
-            }
-        });
+
+        if (PaymentActivity.amount == 0) {
+
+            testing.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    startActivity(new Intent(PaymentConfirm.this, PaymentFail.class));
+                }
+            });
+        }
+        else {
+            testing.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    startActivity(new Intent(PaymentConfirm.this, PaymentReceipt.class));
+                }
+            });
+        }
+
     }
 
 }

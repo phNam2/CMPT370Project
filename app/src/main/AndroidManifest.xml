@@ -91,6 +91,10 @@
             android:name=".PaymentReceipt"
             android:label="Payment"
             android:parentActivityName=".PaymentActivity" />
+        <activity
+            android:name=".PaymentFail"
+            android:label="Payment"
+            android:parentActivityName=".PaymentActivity" />
     </application>
 
 </manifest>
