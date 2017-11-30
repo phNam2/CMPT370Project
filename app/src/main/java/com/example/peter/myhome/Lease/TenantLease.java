@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+
 import com.example.peter.myhome.R;
 
 import static com.example.peter.myhome.R.id.address;
@@ -31,6 +32,8 @@ public class TenantLease extends AppCompatActivity {
     private EditText propertyNameField;
     private EditText responseField;
     private Button   submit;
+
+
 
     //Fields for connection to database
     private static final String DB_URL = "jdbc:mysql://db.cs.usask.ca:3306/cmpt370_magic8b";
@@ -62,6 +65,8 @@ public class TenantLease extends AppCompatActivity {
         addressField = (EditText) findViewById(R.id.address);
         propertyNameField = (EditText) findViewById(R.id.propertyName);
         responseField = (EditText) findViewById(R.id.response);
+
+
 
 
 
@@ -232,6 +237,8 @@ public class TenantLease extends AppCompatActivity {
             return msg;
 
         }
+
+
 
     }
 
