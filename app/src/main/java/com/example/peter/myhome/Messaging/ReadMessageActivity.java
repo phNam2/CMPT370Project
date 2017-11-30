@@ -1,4 +1,4 @@
-package com.example.peter.myhome;
+package com.example.peter.myhome.Messaging;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -7,8 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import com.example.peter.myhome.R;
+
 public class ReadMessageActivity extends AppCompatActivity {
 
+    /*
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +27,11 @@ public class ReadMessageActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+    }
+    */
+
+    private void OpenMessage() {
+
     }
 
 }

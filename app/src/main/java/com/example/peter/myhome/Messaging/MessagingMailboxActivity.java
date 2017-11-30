@@ -1,12 +1,15 @@
-package com.example.peter.myhome;
+package com.example.peter.myhome.Messaging;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+
+import com.example.peter.myhome.R;
+
 
 public class MessagingMailboxActivity extends AppCompatActivity {
 
@@ -25,6 +28,23 @@ public class MessagingMailboxActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private void PopulateMessageList() {
+        int MyUserId = 0;
+        // TODO: get the current User Id.
+
+        MessagingDatabaseConn DatabaseConn = new MessagingDatabaseConn();
+        DatabaseConn.getMessageFromDatabase(MyUserId);
+    }
+
+    private void DeleteMessage() {
+
+    }
+
+    private void SelectMessage() {
+        int MessageId;
+
     }
 
 }

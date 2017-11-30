@@ -1,4 +1,4 @@
-package com.example.peter.myhome;
+package com.example.peter.myhome.Messaging;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -7,8 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import com.example.peter.myhome.R;
+
+
 public class MessagingNewMessageActivity extends AppCompatActivity {
 
+    /*
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +28,17 @@ public class MessagingNewMessageActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+    }
+*/
+
+    protected void sendMessage(int MyUserId) {
+        int UserId = 0;
+        String Subject = "TestSubject";
+        String Message = "TestMessage";
+
+        // TODO: Get info input by user.
+        MessagingDatabaseConn SendMessage = new MessagingDatabaseConn();
+        SendMessage.sendToDatabase(MyUserId, UserId, Subject, Message);
     }
 
 }
