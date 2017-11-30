@@ -10,8 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 public class UserProfileActivity extends AppCompatActivity {
 
     Button editProfile;
@@ -43,6 +41,7 @@ public class UserProfileActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(UserProfileActivity.this, UserProfileEditActivity.class);
+                finish();
                 startActivity(intent);
             }
         });
@@ -57,7 +56,7 @@ public class UserProfileActivity extends AppCompatActivity {
 
 
     private void populateFields(){
-        ProfileDatabaseManager m = new ProfileDatabaseManager(Integer.toString(LoginActivity.currentUser), name, email, phone);
+        ProfileViewPopulateFields m = new ProfileViewPopulateFields(Integer.toString(LoginActivity.currentUser), name, email, phone);
         m.execute();
         //TODO need to create a static userId variable. Could also use email
         //m.doInBackground(), );

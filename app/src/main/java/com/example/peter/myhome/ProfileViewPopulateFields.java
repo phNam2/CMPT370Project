@@ -13,12 +13,11 @@ import org.w3c.dom.Text;
 
 import java.sql.*;
 
-public class ProfileDatabaseManager extends AsyncTask<Void, Void, ResultSet> {
+public class ProfileViewPopulateFields extends AsyncTask<Void, Void, ResultSet> {
 
     private final String dbUser = "cmpt370_magic8b";
     private final String dbPassword = "p2z9ZhNfoKTOFsXpqAnP";
     private final String dbUrl = "jdbc:mysql://db.cs.usask.ca:3306/cmpt370_magic8b";
-    private PreparedStatement ps = null;
     private ResultSet rs = null;
     private TextView name;
     private TextView phone;
@@ -34,7 +33,7 @@ public class ProfileDatabaseManager extends AsyncTask<Void, Void, ResultSet> {
      * @param phone
      * @param email
      */
-    public ProfileDatabaseManager(String userId, TextView name,TextView phone, TextView email){
+    public ProfileViewPopulateFields(String userId, TextView name, TextView phone, TextView email){
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -94,19 +93,5 @@ public class ProfileDatabaseManager extends AsyncTask<Void, Void, ResultSet> {
       }catch(Exception e){e.printStackTrace();}
 
     }
-    //private static class instance {
-    //    static final ProfileDatabaseManager INSTANCE = new ProfileDatabaseManager();
-    //}
-    /**
-     * This is a singleton class. Must call this method if you require use
-     * of the database manager
-     * @return The database manager
-     */
-    //public static ProfileDatabaseManager getInstance(String name,String phone, String email) {
-     //   populateFields();
-     //   return instance.INSTANCE;
-    //}
-
-
 
 }
