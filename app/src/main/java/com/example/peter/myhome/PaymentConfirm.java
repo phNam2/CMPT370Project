@@ -20,10 +20,7 @@ public class PaymentConfirm extends AppCompatActivity {
         setContentView(R.layout.payment_confirm);
 
         TextView textView = (TextView) findViewById(R.id.amount_view);
-        //EditText amount = (EditText) findViewById(R.id.amount_enter);
-
-        //int number = Integer.parseInt(amount.getText().toString());
-        textView.setText(50 + "");
+        textView.setText(PaymentActivity.amount + "");
     }
 
     public void onToReceipt(View v) {
