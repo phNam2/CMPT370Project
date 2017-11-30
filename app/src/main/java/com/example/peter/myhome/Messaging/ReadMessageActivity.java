@@ -11,6 +11,7 @@ import com.example.peter.myhome.R;
 
 public class ReadMessageActivity extends AppCompatActivity {
 
+    /*
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +28,7 @@ public class ReadMessageActivity extends AppCompatActivity {
             }
         });
     }
+    */
 
     private void OpenMessage() {
 

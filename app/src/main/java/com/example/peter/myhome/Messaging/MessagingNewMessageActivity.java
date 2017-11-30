@@ -12,6 +12,7 @@ import com.example.peter.myhome.R;
 
 public class MessagingNewMessageActivity extends AppCompatActivity {
 
+    /*
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +29,7 @@ public class MessagingNewMessageActivity extends AppCompatActivity {
             }
         });
     }
+*/
 
     protected void sendMessage(int MyUserId) {
         int UserId = 0;
