@@ -90,10 +90,6 @@
         <activity android:name=".MessagingMailboxActivity" />
         <activity android:name=".MessagingNewMessageActivity" />
         <activity android:name=".A_jdbcActivity" />
-        <activity
-            android:name=".Lease.LeaseDB"
-            android:label="@string/title_activity_lease_db"
-            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
