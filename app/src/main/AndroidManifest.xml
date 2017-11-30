@@ -79,8 +79,8 @@
             android:name=".SearchGuestActivity"
             android:label="@string/title_activity_search_guest"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MessagingMailboxActivity" />
-        <activity android:name=".MessagingNewMessageActivity" />
+        <activity android:name=".Messaging.MessagingMailboxActivity" />
+        <activity android:name=".Messaging.MessagingNewMessageActivity" />
         <activity android:name=".A_jdbcActivity" />
         <activity
             android:name=".UserProfileActivity"
