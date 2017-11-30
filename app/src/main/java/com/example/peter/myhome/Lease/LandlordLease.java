@@ -8,11 +8,30 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
+import android.widget.EditText;
 
 import com.example.peter.myhome.R;
 
+/*
+    The Lease use case from the Landlord side.
+    Incomplete since we did not create a view from the landlord side.
+ */
+
 public class LandlordLease extends AppCompatActivity {
 
+    //Fields for tenant information
+    //private EditText nameField;
+    //private Button   submit;
+
+    //Text fields for tenant renewal form
+    //nameField = (EditText) findViewById(name);
+
+    /*
+    //create button object for xml submit button
+    submit = (Button) findViewById(R.id.submit);
+    */
+
+    /*
     public void onButtonSubmit(View v) {
         Button submit = (Button) findViewById(R.id.submit);
         submit.setOnClickListener(new View.OnClickListener(){
@@ -22,6 +41,8 @@ public class LandlordLease extends AppCompatActivity {
             }
         });
     }
+
+    */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

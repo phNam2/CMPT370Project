@@ -26,23 +26,4 @@
         tools:layout_editor_absoluteX="93dp"
         tools:layout_editor_absoluteY="305dp" />
 
-    <EditText
-        android:id="@+id/editText8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="YYYY-MM-DD"
-        android:inputType="date"
-        tools:layout_editor_absoluteX="46dp"
-        tools:layout_editor_absoluteY="107dp" />
-
-    <EditText
-        android:id="@+id/editText11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Lease Renewal Yes/No"
-        tools:layout_editor_absoluteX="46dp"
-        tools:layout_editor_absoluteY="185dp" />
 </android.support.constraint.ConstraintLayout>

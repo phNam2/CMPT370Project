@@ -154,8 +154,7 @@ public class TenantLease extends AppCompatActivity {
                 }
             })
 */
-        //still need method for sending submission to database once
-        //database connection is working
+
 
 
 
