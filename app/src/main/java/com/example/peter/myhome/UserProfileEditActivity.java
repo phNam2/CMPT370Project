@@ -17,7 +17,6 @@ public class UserProfileEditActivity extends AppCompatActivity {
     EditText name;
     EditText phone;
     EditText email;
-    public static boolean updateFinished;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,8 +50,8 @@ public class UserProfileEditActivity extends AppCompatActivity {
                 create new ProfileEditInsertDatabase class, call the execute method and pass the text from all the fields
                 as String classes to the background process. To save whatever is in the fields into the database
                 */
-                updateFinished = false;
-                new ProfileEditInsertDatabase().execute(name.getText().toString(),phone.getText().toString(),  email.getText().toString());
+
+                new ProfileEditInsertDatabase().execute(name.getText().toString(),phone.getText().toString(), email.getText().toString());
 
                     //start up UserProfileActivity
                     Intent intent = new Intent(UserProfileEditActivity.this, UserProfileActivity.class);

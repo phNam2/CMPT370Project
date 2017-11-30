@@ -9,13 +9,13 @@ import java.sql.*;
  * Created by Graeme on 2017-11-29.
  */
 
-public class ProfileEditInsertDatabase extends AsyncTask<String, Void,Boolean> {
+public class ProfileEditInsertDatabase extends AsyncTask<String, Void,Void> {
     private final String dbUser = "cmpt370_magic8b";
     private final String dbPassword = "p2z9ZhNfoKTOFsXpqAnP";
     private final String dbUrl = "jdbc:mysql://db.cs.usask.ca:3306/cmpt370_magic8b";
     private PreparedStatement ps = null;
     @Override
-    protected Boolean doInBackground(String... insertStrings) {
+    protected Void doInBackground(String... insertStrings) {
         Connection con = openConnection();
         //The person's name comes as one string. Have to split it to put it into the first and last
         //name columns of the database
@@ -38,18 +38,14 @@ public class ProfileEditInsertDatabase extends AsyncTask<String, Void,Boolean> {
 
         con.close();
 
-        return true;
+
         }catch(Exception e){
             e.printStackTrace();
 
         }
-        return true;
+        return null;
     }
 
-    @Override
-    protected void onPostExecute(Boolean updateFinished){
-        UserProfileEditActivity.updateFinished = true;
-    }
 
     /**
      * Opens the connection to the database

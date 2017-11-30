@@ -51,7 +51,8 @@ public class ProfileViewPopulateFields extends AsyncTask<Void, Void, ResultSet> 
         Connection con = openConnection();
 
         try {
-            rs = con.createStatement().executeQuery("SELECT * FROM Tenant_Landlord WHERE User_ID=" + userId);
+            rs = con.createStatement().executeQuery("SELECT * FROM Applicants WHERE Applicant_ID=" + userId);
+
             return rs;
 
 
@@ -83,12 +84,13 @@ public class ProfileViewPopulateFields extends AsyncTask<Void, Void, ResultSet> 
 
         try {
           if(rs.next()) {
-              String firstName = rs.getString("FirstName");
-              String lastName = rs.getString("LastName");
+              String firstName = rs.getString("FName");
+              String lastName = rs.getString("LName");
 
               email.setText(rs.getString("Email"));
               phone.setText(rs.getString("Phone_number"));
               name.setText(firstName + " " + lastName);
+
           }
       }catch(Exception e){e.printStackTrace();}
 
