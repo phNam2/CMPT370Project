@@ -28,4 +28,8 @@ public class ReadMessageActivity extends AppCompatActivity {
         });
     }
 
+    private void OpenMessage() {
+
+    }
+
 }

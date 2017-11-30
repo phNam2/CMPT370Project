@@ -10,7 +10,7 @@
 
     <RelativeLayout
         android:layout_width="368dp"
-        android:layout_height="495dp"
+        android:layout_height="499dp"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp">
 
@@ -21,9 +21,9 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="35dp"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginLeft="34dp"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="31dp"
             android:text="From: " />
 
         <TextView
@@ -34,7 +34,7 @@
             android:layout_toEndOf="@+id/SubjectLb"
             android:layout_toRightOf="@+id/SubjectLb"
             android:text="  "
-            tools:text="TempText" />
+            tools:text="Ex: Will be replaced with sender info" />
 
         <TextView
             android:id="@+id/SubjectLb"
@@ -52,7 +52,7 @@
             android:layout_below="@+id/FromDataLb"
             android:layout_toEndOf="@+id/SubjectLb"
             android:layout_toRightOf="@+id/SubjectLb"
-            android:text="TempText" />
+            android:text="Ex: Will be replaced with Subject of Message" />
 
         <TextView
             android:id="@+id/messageLb"
@@ -71,6 +71,7 @@
             android:layout_alignLeft="@+id/messageLb"
             android:layout_alignStart="@+id/messageLb"
             android:layout_below="@+id/messageLb"
-            android:text="TempText Is a lot of text here just for the purpose of testing what happens here" />
+            android:text="Example Message: Here is some text that will be replaced by a message that the user has selected." />
+
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

@@ -9,6 +9,7 @@ import android.view.View;
 
 import com.example.peter.myhome.R;
 
+
 public class MessagingNewMessageActivity extends AppCompatActivity {
 
     @Override
@@ -26,6 +27,16 @@ public class MessagingNewMessageActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+    }
+
+    protected void sendMessage(int MyUserId) {
+        int UserId = 0;
+        String Subject = "TestSubject";
+        String Message = "TestMessage";
+
+        // TODO: Get info input by user.
+        MessagingDatabaseConn SendMessage = new MessagingDatabaseConn();
+        SendMessage.sendToDatabase(MyUserId, UserId, Subject, Message);
     }
 
 }

@@ -3,10 +3,13 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://C:\Users\XxWol\Downloads\University\2017 Fall Term\CMPT 370\ProjectRepository2\CMPT370GroupProject.iml" filepath="C:\Users\XxWol\Downloads\University\2017 Fall Term\CMPT 370\ProjectRepository2\CMPT370GroupProject.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ProjectRepository2.iml" filepath="$PROJECT_DIR$/ProjectRepository2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GroupProjectRepo.iml" filepath="$PROJECT_DIR$/GroupProjectRepo.iml" />
+      <module fileurl="file://C:\Users\XxWol\Downloads\University\CMPT370\GroupProjectRepo\ProjectRepository2.iml" filepath="C:\Users\XxWol\Downloads\University\CMPT370\GroupProjectRepo\ProjectRepository2.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/junit-4.12/junit-4.12.iml" filepath="$PROJECT_DIR$/junit-4.12/junit-4.12.iml" />
+      <module fileurl="file://C:\Users\XxWol\Downloads\University\CMPT370\GroupProjectRepo\junit-4.12\junit-4.12.iml" filepath="C:\Users\XxWol\Downloads\University\CMPT370\GroupProjectRepo\junit-4.12\junit-4.12.iml" />
       <module fileurl="file://$PROJECT_DIR$/mysql-5.1/mysql-5.1.iml" filepath="$PROJECT_DIR$/mysql-5.1/mysql-5.1.iml" />
+      <module fileurl="file://C:\Users\XxWol\Downloads\University\CMPT370\GroupProjectRepo\mysql-5.1\mysql-5.1.iml" filepath="C:\Users\XxWol\Downloads\University\CMPT370\GroupProjectRepo\mysql-5.1\mysql-5.1.iml" />
     </modules>
   </component>
 </project>
