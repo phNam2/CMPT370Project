@@ -9,10 +9,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-
     <application
         android:name="android.support.multidex.MultiDexApplication"
-
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -81,12 +79,27 @@
             android:name=".SearchGuestActivity"
             android:label="@string/title_activity_search_guest"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MessagingMailboxActivity" />
+        <activity android:name=".MessagingNewMessageActivity" />
+        <activity android:name=".A_jdbcActivity" />
         <activity
-            android:name=".MessagingMailboxActivity" />
+            android:name=".UserProfileActivity"
+            android:label="@string/title_activity_user_profile"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.peter.myhome.HomeActivity" />
+        </activity>
         <activity
-            android:name=".MessagingNewMessageActivity"/>
-        <activity
-            android:name=".A_jdbcActivity" />
+            android:name=".UserProfileEditActivity"
+            android:label="@string/title_activity_user_profile_edit"
+            android:parentActivityName=".UserProfileActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.peter.myhome.UserProfileActivity" />
+        </activity>
     </application>
 
 </manifest>
