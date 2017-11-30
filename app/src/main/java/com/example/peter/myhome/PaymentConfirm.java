@@ -12,7 +12,8 @@ import android.widget.TextView;
  * Created by Nam on 2017-10-29.
  */
 
-public class PaymentConfirm extends AppCompatActivity {
+public class PaymentConfirm extends AppCompatActivity{
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,7 @@ public class PaymentConfirm extends AppCompatActivity {
             });
         }
         else {
+
             testing.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
