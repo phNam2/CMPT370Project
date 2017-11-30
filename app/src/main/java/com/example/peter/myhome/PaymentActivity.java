@@ -55,7 +55,6 @@ public class PaymentActivity extends AppCompatActivity implements Runnable {
                 }
 
                 prest.close();
-                con.close();
             }
             catch (SQLException s){
                 System.out.println("SQL statement is not executed!");
