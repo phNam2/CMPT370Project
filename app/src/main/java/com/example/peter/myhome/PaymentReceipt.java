@@ -37,12 +37,8 @@ public class PaymentReceipt extends AppCompatActivity{
         String method = PaymentActivity.method;
         String des = "Rent payment before deadline";
 
-        DateFormat formatter = new SimpleDateFormat("yyyy/mm/dd");
-        Date today = new Date();
-        String date = formatter.format(today);
-
         new PaymentUpdate().execute(Integer.toString(current), Integer.toString(Current_User.getUserID()));
-        new PaymentInsert().execute(Integer.toString(Current_User.getUserID()), des, Integer.toString(amount), method, date, String.valueOf(true));
+        new PaymentInsert().execute(Integer.toString(Current_User.getUserID()), des, Integer.toString(amount), method, String.valueOf(true));
 
     }
 
