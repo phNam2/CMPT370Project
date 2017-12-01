@@ -12,6 +12,7 @@
         android:layout_width="189dp"
         android:layout_height="83dp"
         android:layout_weight="0.01"
+        android:onClick="onButtonHistoryClick"
         android:text="Payment History"
         tools:onClick="onButtonHistoryClick" />
 

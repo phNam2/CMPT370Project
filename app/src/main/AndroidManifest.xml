@@ -124,6 +124,10 @@
             android:name=".Maintenance.MaintenanceHistoryActivity"
             android:label="Maintenance"
             android:parentActivityName=".Maintenance.MaintenanceActivity"></activity>
+        <activity
+            android:name=".Payment.PaymentHistoryActivity"
+            android:label="Payment"
+            android:parentActivityName=".Payment.PaymentActivity" />
     </application>
 
 </manifest>

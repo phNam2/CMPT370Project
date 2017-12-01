@@ -85,8 +85,6 @@ public class PaymentActivity extends AppCompatActivity implements Runnable {
     };
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,6 +96,13 @@ public class PaymentActivity extends AppCompatActivity implements Runnable {
 
     public void onButtonHistoryClick(View v) {
 
+        history = (Button) findViewById(R.id.payment_history);
+        history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PaymentActivity.this, PaymentHistoryActivity.class));
+            }
+        });
     }
 
     public void onButtonCardClick(View v) {
