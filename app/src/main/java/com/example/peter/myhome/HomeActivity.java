@@ -14,7 +14,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageButton;
-import android.support.v7.widget.SearchView;
+
+import com.example.peter.myhome.Maintenance.MaintenanceActivity;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -35,12 +36,12 @@ public class HomeActivity extends AppCompatActivity
             }
         });
 
-        ImageButton maintenaneceButton = (ImageButton)findViewById(R.id.maintenance_button);
-        maintenaneceButton.setOnClickListener(new View.OnClickListener(){
+        ImageButton maintenanceButton = (ImageButton)findViewById(R.id.maintenance_button);
+        maintenanceButton.setOnClickListener(new View.OnClickListener(){
            @Override
             public void onClick(View v){
-               startActivity(new Intent(HomeActivity.this, MaintenanceActivity.class));
-           }
+                startActivity(new Intent(HomeActivity.this, MaintenanceActivity.class));
+            }
         });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

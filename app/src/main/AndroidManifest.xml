@@ -9,10 +9,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-
     <application
         android:name="android.support.multidex.MultiDexApplication"
-
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -32,7 +30,7 @@
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MaintenanceActivity" />
+        <activity android:name=".Maintenance.MaintenanceActivity" />
         <activity
             android:name=".PaymentActivity"
             android:label="MyHome Payment" />
@@ -81,12 +79,17 @@
             android:name=".SearchGuestActivity"
             android:label="@string/title_activity_search_guest"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MessagingMailboxActivity" />
+        <activity android:name=".MessagingNewMessageActivity" />
+        <activity android:name=".A_jdbcActivity" />
         <activity
-            android:name=".MessagingMailboxActivity" />
+            android:name=".Maintenance.NewMaintenanceActivity"
+            android:label="Maintenance"
+            android:parentActivityName=".Maintenance.MaintenanceActivity" />
         <activity
-            android:name=".MessagingNewMessageActivity"/>
-        <activity
-            android:name=".A_jdbcActivity" />
+            android:name=".Maintenance.MaintenanceHistoryActivity"
+            android:label="Maintenance"
+            android:parentActivityName=".Maintenance.MaintenanceActivity"></activity>
     </application>
 
 </manifest>

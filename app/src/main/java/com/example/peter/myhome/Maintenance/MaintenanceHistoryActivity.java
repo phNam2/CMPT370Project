@@ -1,7 +1,9 @@
-package com.example.peter.myhome;
+package com.example.peter.myhome.Maintenance;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.peter.myhome.R;
 
 public class MaintenanceHistoryActivity extends AppCompatActivity {
 
