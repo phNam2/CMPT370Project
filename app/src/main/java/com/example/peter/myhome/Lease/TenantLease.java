@@ -79,8 +79,9 @@ public class TenantLease extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener()
         {
             @Override
-            public void onClick(View v)
+            public void onClick(View view)
             {
+                buttonSubmit();
                 Toast toast = new Toast(getApplicationContext());
                 Toast.makeText(getApplicationContext(), "Thank You", Toast.LENGTH_SHORT).show();
 
@@ -184,7 +185,7 @@ public class TenantLease extends AppCompatActivity {
         return true;
     }
 
-    public void buttonSubmit (View view){
+    public void buttonSubmit(){
 
         Send objSend = new Send ();
         objSend.execute("");
@@ -201,7 +202,22 @@ public class TenantLease extends AppCompatActivity {
         String propertyNameText = propertyNameField.getText().toString();
         String responseText = responseField.getText().toString();
 
+
+
         protected String doInBackground (String... strings){
+
+            String s[] = nameText.split(":");
+            String nameText = s[1];
+
+            String s2[] = addressText.split(":");
+            String addressText = s2[1];
+
+            String s3[] = propertyNameText.split(":");
+            String propertyNameText = s3[1];
+
+            String s4[] = responseText.split(":");
+            String responseText = s4[1];
+
 
             try{
 
