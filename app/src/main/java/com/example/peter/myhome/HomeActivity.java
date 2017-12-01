@@ -19,6 +19,7 @@ import com.example.peter.myhome.Messaging.MessagingMailboxActivity;
 
 import com.example.peter.myhome.Lease.TenantLease;
 import com.example.peter.myhome.Maintenance.MaintenanceActivity;
+import com.example.peter.myhome.Payment.PaymentActivity;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

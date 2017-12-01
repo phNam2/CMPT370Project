@@ -1,4 +1,4 @@
-package com.example.peter.myhome;
+package com.example.peter.myhome.Payment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.peter.myhome.DatabaseTesting.A_jdbcActivity;
+import com.example.peter.myhome.Current_User;
+import com.example.peter.myhome.DatabaseTesting.DatabaseTestingActivity;
+import com.example.peter.myhome.HomeActivity;
+import com.example.peter.myhome.R;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,20 +1,13 @@
-package com.example.peter.myhome;
+package com.example.peter.myhome.Payment;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import com.example.peter.myhome.Current_User;
+import com.example.peter.myhome.R;
 
 
 /**

@@ -1,8 +1,10 @@
-package com.example.peter.myhome;
+package com.example.peter.myhome.DatabaseTesting;
 
 import android.app.AlertDialog;
 import android.content.Context;
 import android.os.AsyncTask;
+
+import com.example.peter.myhome.IP_Address;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

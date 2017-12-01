@@ -1,10 +1,12 @@
-package com.example.peter.myhome;
+package com.example.peter.myhome.Payment;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.peter.myhome.R;
 
 /**
  * Created by Nam on 2017-10-28.

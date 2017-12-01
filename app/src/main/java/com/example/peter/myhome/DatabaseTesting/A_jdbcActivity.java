@@ -1,4 +1,4 @@
-package com.example.peter.myhome;
+package com.example.peter.myhome.DatabaseTesting;
 
 /**
  * Created by Nam on 2017-11-26.
@@ -15,6 +15,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.app.Activity;
 import android.widget.TextView;
+
+import com.example.peter.myhome.R;
 
 public class A_jdbcActivity extends Activity implements Runnable{
 

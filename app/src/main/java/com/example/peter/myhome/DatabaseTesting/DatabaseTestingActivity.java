@@ -1,9 +1,13 @@
-package com.example.peter.myhome;
+package com.example.peter.myhome.DatabaseTesting;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
 import android.view.View;
+
+import com.example.peter.myhome.DatabaseTesting.BackgroundWorker;
+import com.example.peter.myhome.R;
+
 /**
  * Created by Nam on 2017-11-13.
  */

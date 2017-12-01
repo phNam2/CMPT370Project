@@ -32,20 +32,20 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Maintenance.MaintenanceActivity" />
         <activity
-            android:name=".PaymentActivity"
+            android:name=".Payment.PaymentActivity"
             android:label="MyHome Payment" />
         <activity
-            android:name=".PaymentCardActivity"
+            android:name=".Payment.PaymentCardActivity"
             android:label="Payment"
-            android:parentActivityName=".PaymentActivity" />
+            android:parentActivityName=".Payment.PaymentActivity" />
         <activity
-            android:name=".PaymentPaypalActivity"
+            android:name=".Payment.PaymentPaypalActivity"
             android:label="Payment"
-            android:parentActivityName=".PaymentActivity" />
+            android:parentActivityName=".Payment.PaymentActivity" />
         <activity
-            android:name=".PaymentConfirm"
+            android:name=".Payment.PaymentConfirm"
             android:label="Payment"
-            android:parentActivityName=".PaymentActivity" />
+            android:parentActivityName=".Payment.PaymentActivity" />
         <activity
             android:name=".Lease.TenantLease"
             android:label="Lease.TenantLease"
@@ -72,9 +72,9 @@
                 android:value="com.example.peter.myhome.HomeActivity" />
         </activity>
         <activity
-            android:name=".DatabaseTestingActivity"
+            android:name=".DatabaseTesting.DatabaseTestingActivity"
             android:label="Testing"
-            android:parentActivityName=".PaymentActivity" />
+            android:parentActivityName=".Payment.PaymentActivity" />
         <activity
             android:name=".SearchActivity"
             android:label="@string/title_activity_search"
@@ -89,7 +89,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Messaging.MessagingMailboxActivity" />
         <activity android:name=".Messaging.MessagingNewMessageActivity" />
-        <activity android:name=".A_jdbcActivity" />
+        <activity android:name=".DatabaseTesting.A_jdbcActivity" />
         <activity
             android:name=".UserProfileActivity"
             android:label="@string/title_activity_user_profile"
@@ -109,13 +109,13 @@
                 android:value="com.example.peter.myhome.UserProfileActivity" />
         </activity>
         <activity
-            android:name=".PaymentReceipt"
+            android:name=".Payment.PaymentReceipt"
             android:label="Payment"
-            android:parentActivityName=".PaymentActivity" />
+            android:parentActivityName=".Payment.PaymentActivity" />
         <activity
-            android:name=".PaymentFail"
+            android:name=".Payment.PaymentFail"
             android:label="Payment"
-            android:parentActivityName=".PaymentActivity" />
+            android:parentActivityName=".Payment.PaymentActivity" />
         <activity
             android:name=".Maintenance.NewMaintenanceActivity"
             android:label="Maintenance"

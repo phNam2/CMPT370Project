@@ -1,13 +1,12 @@
-package com.example.peter.myhome;
+package com.example.peter.myhome.Payment;
 
 import android.os.AsyncTask;
+
+import com.example.peter.myhome.Payment.PaymentActivity;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * Created by Nam on 2017-11-30.
