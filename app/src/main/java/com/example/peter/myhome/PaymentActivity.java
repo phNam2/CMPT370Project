@@ -101,7 +101,7 @@ public class PaymentActivity extends AppCompatActivity implements Runnable {
             Toast.makeText(this, "Please enter the amount to pay first", Toast.LENGTH_LONG).show();
         }
         else {
-            method = "Credit_Debit Card";
+            method = "Credit Card";
             amount = Integer.parseInt(edit.getText().toString());
 
             card = (Button) findViewById(R.id.card_button);
