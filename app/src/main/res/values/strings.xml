@@ -29,6 +29,10 @@
     <string name="title_activity_search_guest">SearchGuestActivity</string>
     <string name="title_activity_search_e">SearchEActivity</string>
     <string name="title_activity_search2">Search2Activity</string>
+<<<<<<< HEAD
     <string name="title_activity_user_profile">UserProfileActivity</string>
     <string name="title_activity_user_profile_edit">UserProfileEditActivity</string>
+=======
+    <string name="title_activity_lease_db">LeaseDB</string>
+>>>>>>> feature/LeaseChanges
 </resources>

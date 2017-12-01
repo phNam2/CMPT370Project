@@ -1,6 +1,7 @@
-package com.example.peter.myhome;
+package com.example.peter.myhome.Lease;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,16 +15,33 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+
+import com.example.peter.myhome.R;
+
 import static com.example.peter.myhome.R.id.address;
 import static com.example.peter.myhome.R.id.name;
 import static com.example.peter.myhome.R.id.propertyName;
 
+import java.sql.*;
+
 public class TenantLease extends AppCompatActivity {
 
+    //Fields for tenant information
     private EditText nameField;
     private EditText addressField;
     private EditText propertyNameField;
-    private Button submit;
+    private EditText responseField;
+    private Button   submit;
+
+
+
+    //Fields for connection to database
+    private static final String DB_URL = "jdbc:mysql://db.cs.usask.ca:3306/cmpt370_magic8b";
+    private static final String USER = "cmpt370_magic8b";
+    private static final String PASSWORD = "p2z9ZhNfoKTOFsXpqAnP";
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,10 +64,10 @@ public class TenantLease extends AppCompatActivity {
         nameField = (EditText) findViewById(name);
         addressField = (EditText) findViewById(R.id.address);
         propertyNameField = (EditText) findViewById(R.id.propertyName);
+        responseField = (EditText) findViewById(R.id.response);
 
-        //Radio Buttons for lease renewal
-        RadioButton yes = (RadioButton) findViewById(R.id.yes);
-        RadioButton no = (RadioButton) findViewById(R.id.no);
+
+
 
 
         //create button object for xml submit button
@@ -61,10 +79,11 @@ public class TenantLease extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener()
         {
             @Override
-            public void onClick(View v)
+            public void onClick(View view)
             {
+                buttonSubmit();
                 Toast toast = new Toast(getApplicationContext());
-                toast.makeText(getApplicationContext(), "Thank You", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Thank You", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -126,34 +145,19 @@ public class TenantLease extends AppCompatActivity {
 
 
 
- /*   public void onButtonSubmit(View v) {
+/*
+    public void onButtonSubmit(View v) {
             Button submit = (Button) findViewById(R.id.submit);
             submit.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
                     startActivity(new Intent(TenantLease.this, TenantLeaseConfirm.class));
                 }
-            });
+            })
 */
-        //still need method for sending submission to database once
-        //database connection is working
 
-        public void onRadioButtonClicked(View view) {
-            // Is the button now checked?
-            boolean checked = ((RadioButton) view).isChecked();
 
-            // Check which radio button was clicked
-            switch(view.getId()) {
-                case R.id.yes:
-                    if (checked)
-                        // send info to database
-                        break;
-                case R.id.no:
-                    if (checked)
-                        // send info to database
-                        break;
-            }
-        }
+
 
     /**
      * Checks all editText fields and if they are not empty it will set button to be clickable
@@ -181,6 +185,78 @@ public class TenantLease extends AppCompatActivity {
         return true;
     }
 
+    public void buttonSubmit(){
+
+        Send objSend = new Send ();
+        objSend.execute("");
     }
+
+
+    private class Send extends AsyncTask<String, String, String>{
+
+        //String for database connection message
+        String msg = "";
+
+        String nameText = nameField.getText().toString();
+        String addressText = addressField.getText().toString();
+        String propertyNameText = propertyNameField.getText().toString();
+        String responseText = responseField.getText().toString();
+
+
+
+        protected String doInBackground (String... strings){
+
+            String s[] = nameText.split(":");
+            String nameText = s[1];
+
+            String s2[] = addressText.split(":");
+            String addressText = s2[1];
+
+            String s3[] = propertyNameText.split(":");
+            String propertyNameText = s3[1];
+
+            String s4[] = responseText.split(":");
+            String responseText = s4[1];
+
+
+            try{
+
+                try {
+                    Class.forName("com.mysql.jdbc.Driver");
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+                Connection conn = DriverManager.getConnection(DB_URL, USER, PASSWORD);
+
+                if (conn == null){
+
+                    msg = "Something is wrong";
+                }
+                else{
+
+                    String query = "INSERT INTO Lease (name, address, propertyName, response)" +
+                            "VALUES ('"+nameText+"', '"+addressText+"', '"+propertyNameText+"', '"+responseText+"');";
+
+                    Statement stmt = conn.createStatement();
+                    stmt.executeUpdate(query);
+                    msg = "Inserting...";
+
+                }
+                conn.close();
+
+            }catch(SQLException e){
+
+                msg = "Something is REALLY wrong";
+                e.printStackTrace();
+            }
+            return msg;
+
+        }
+
+
+
+    }
+
+}
 
 //}

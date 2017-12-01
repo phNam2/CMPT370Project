@@ -47,6 +47,14 @@
             android:label="Payment"
             android:parentActivityName=".PaymentActivity" />
         <activity
+            android:name=".Lease.TenantLease"
+            android:label="Lease.TenantLease"
+            android:parentActivityName="Lease.TenantLease" />
+        <activity
+            android:name=".Lease.TenantLeaseConfirm"
+            android:label="Lease.TenantLeaseConfirm"
+            android:parentActivityName="Lease.TenantLeaseConfirm" />
+        <activity
             android:name=".ReviewActivity"
             android:label="@string/title_activity_review"
             android:parentActivityName=".HomeActivity">
@@ -79,6 +87,7 @@
             android:name=".SearchGuestActivity"
             android:label="@string/title_activity_search_guest"
             android:theme="@style/AppTheme.NoActionBar" />
+<<<<<<< HEAD
         <activity android:name=".Messaging.MessagingMailboxActivity" />
         <activity android:name=".Messaging.MessagingNewMessageActivity" />
         <activity android:name=".A_jdbcActivity" />
@@ -108,6 +117,11 @@
             android:name=".PaymentFail"
             android:label="Payment"
             android:parentActivityName=".PaymentActivity" />
+=======
+        <activity android:name=".MessagingMailboxActivity" />
+        <activity android:name=".MessagingNewMessageActivity" />
+        <activity android:name=".A_jdbcActivity" />
+>>>>>>> feature/LeaseChanges
     </application>
 
 </manifest>

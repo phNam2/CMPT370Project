@@ -17,6 +17,8 @@ import android.widget.ImageButton;
 
 import com.example.peter.myhome.Messaging.MessagingMailboxActivity;
 
+import com.example.peter.myhome.Lease.TenantLease;
+
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -113,6 +115,9 @@ public class HomeActivity extends AppCompatActivity
             startActivity(intent);
         } else if (id == R.id.nav_send) {
             Intent intent = new Intent(HomeActivity.this, MessagingMailboxActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_lease) {
+            Intent intent = new Intent(HomeActivity.this, TenantLease.class);
             startActivity(intent);
         }
 
