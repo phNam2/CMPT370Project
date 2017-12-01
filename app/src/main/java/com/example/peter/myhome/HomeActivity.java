@@ -15,13 +15,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageButton;
 
-<<<<<<< HEAD
 import com.example.peter.myhome.Messaging.MessagingMailboxActivity;
 
 import com.example.peter.myhome.Lease.TenantLease;
-=======
 import com.example.peter.myhome.Maintenance.MaintenanceActivity;
->>>>>>> feature/maintenanceActivity
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
