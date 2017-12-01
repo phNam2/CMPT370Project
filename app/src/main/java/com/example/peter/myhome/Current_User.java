@@ -6,9 +6,9 @@ package com.example.peter.myhome;
 
 public class Current_User {
 
-    public static int UserID = 0;
-    public static String FName = "";
-    public static String LName = "";
+    public static int UserID = 1;
+    public static String FName = "Ian";
+    public static String LName = "More";
 
 
     public static int getUserID () {
