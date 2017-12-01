@@ -110,13 +110,18 @@ public class PaymentActivity extends AppCompatActivity implements Runnable {
             method = "Credit Card";
             amount = Integer.parseInt(edit.getText().toString());
 
-            card = (Button) findViewById(R.id.card_button);
-            card.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    startActivity(new Intent(PaymentActivity.this, PaymentCardActivity.class));
-                }
-            });
+            if (amount > currentBalance) {
+                Toast.makeText(this, "The amount should not be bigger than the balance", Toast.LENGTH_LONG).show();
+            }
+            else {
+                card = (Button) findViewById(R.id.card_button);
+                card.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(PaymentActivity.this, PaymentCardActivity.class));
+                    }
+                });
+            }
         }
 
     }
@@ -131,13 +136,18 @@ public class PaymentActivity extends AppCompatActivity implements Runnable {
             method = "Paypal";
             amount = Integer.parseInt(edit.getText().toString());
 
-            paypal = (Button) findViewById(R.id.paypal);
-            paypal.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    startActivity(new Intent(PaymentActivity.this, PaymentPaypalActivity.class));
-                }
-            });
+            if (amount > currentBalance) {
+                Toast.makeText(this, "The amount should not be bigger than the balance", Toast.LENGTH_LONG).show();
+            }
+            else {
+                paypal = (Button) findViewById(R.id.paypal);
+                paypal.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v){
+                        startActivity(new Intent(PaymentActivity.this, PaymentPaypalActivity.class));
+                    }
+                });
+            }
         }
 
     }
