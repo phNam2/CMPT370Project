@@ -15,9 +15,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageButton;
 
+<<<<<<< HEAD
 import com.example.peter.myhome.Messaging.MessagingMailboxActivity;
 
 import com.example.peter.myhome.Lease.TenantLease;
+=======
+import com.example.peter.myhome.Maintenance.MaintenanceActivity;
+>>>>>>> feature/maintenanceActivity
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -38,12 +42,12 @@ public class HomeActivity extends AppCompatActivity
             }
         });
 
-        ImageButton maintenaneceButton = (ImageButton)findViewById(R.id.maintenance_button);
-        maintenaneceButton.setOnClickListener(new View.OnClickListener(){
+        ImageButton maintenanceButton = (ImageButton)findViewById(R.id.maintenance_button);
+        maintenanceButton.setOnClickListener(new View.OnClickListener(){
            @Override
             public void onClick(View v){
-               startActivity(new Intent(HomeActivity.this, MaintenanceActivity.class));
-           }
+                startActivity(new Intent(HomeActivity.this, MaintenanceActivity.class));
+            }
         });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

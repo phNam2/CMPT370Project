@@ -30,7 +30,7 @@
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MaintenanceActivity" />
+        <activity android:name=".Maintenance.MaintenanceActivity" />
         <activity
             android:name=".PaymentActivity"
             android:label="MyHome Payment" />
@@ -88,6 +88,7 @@
             android:label="@string/title_activity_search_guest"
             android:theme="@style/AppTheme.NoActionBar" />
 <<<<<<< HEAD
+<<<<<<< HEAD
         <activity android:name=".Messaging.MessagingMailboxActivity" />
         <activity android:name=".Messaging.MessagingNewMessageActivity" />
         <activity android:name=".A_jdbcActivity" />
@@ -122,6 +123,19 @@
         <activity android:name=".MessagingNewMessageActivity" />
         <activity android:name=".A_jdbcActivity" />
 >>>>>>> feature/LeaseChanges
+=======
+        <activity android:name=".MessagingMailboxActivity" />
+        <activity android:name=".MessagingNewMessageActivity" />
+        <activity android:name=".A_jdbcActivity" />
+        <activity
+            android:name=".Maintenance.NewMaintenanceActivity"
+            android:label="Maintenance"
+            android:parentActivityName=".Maintenance.MaintenanceActivity" />
+        <activity
+            android:name=".Maintenance.MaintenanceHistoryActivity"
+            android:label="Maintenance"
+            android:parentActivityName=".Maintenance.MaintenanceActivity"></activity>
+>>>>>>> feature/maintenanceActivity
     </application>
 
 </manifest>

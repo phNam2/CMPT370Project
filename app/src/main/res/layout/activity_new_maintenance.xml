@@ -4,90 +4,97 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.peter.myhome.NewMaintenanceActivity">
+    tools:context="com.example.peter.myhome.Maintenance.NewMaintenanceActivity">
 
     <LinearLayout
-        android:layout_width="368dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/title_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill"
+                android:inputType="textAutoComplete"
+                android:hint="Insert Request Title"
+                android:background="@android:color/transparent"
+                android:textSize="30sp"/>
+
+        </android.support.design.widget.TextInputLayout>
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="0dp">
+            android:layout_height="0sp"
+            android:layout_weight="5">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
 
-                <EditText
-                    android:id="@+id/title_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Name" />
-
-                <EditText
+                <TextView
                     android:id="@+id/date_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:background="@android:color/transparent"
-                    android:inputType="date" />
+                    android:layout_gravity="fill"
+                    android:textSize="20sp"
+                    android:background="@android:color/transparent" />
 
-                <EditText
+                <TextView
                     android:id="@+id/time_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:background="@android:color/transparent"
-                    android:inputType="time" />
+                    android:layout_gravity="fill"
+                    android:textSize="20sp"
+                    android:background="@android:color/transparent"/>
 
-                <EditText
+                <TextView
                     android:id="@+id/building_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:background="@android:color/transparent"
-                    android:text="Name" />
+                    android:layout_gravity="fill"
+                    android:textSize="20sp"
+                    android:background="@android:color/transparent"/>
 
-                <EditText
+                <TextView
                     android:id="@+id/tenant_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:background="@android:color/transparent"
-                    android:text="Name" />
+                    android:layout_gravity="fill"
+                    android:textSize="20sp"
+                    android:background="@android:color/transparent"/>
 
-                <EditText
+                <TextView
                     android:id="@+id/landlord_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:background="@android:color/transparent"
-                    android:text="Name" />
+                    android:layout_gravity="fill"
+                    android:textSize="20sp"
+                    android:background="@android:color/transparent" />
 
                 <MultiAutoCompleteTextView
                     android:id="@+id/comment_text"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:background="@android:color/transparent"
-                    android:text="MultiAutoCompleteTextView" />
+                    android:textSize="20sp"
+                    android:hint="Insert comments..." />
+
             </LinearLayout>
+
         </ScrollView>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="0sp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_gravity="bottom">
 
             <Button
                 android:id="@+id/save_btn"
@@ -95,7 +102,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:text="Save" />
+                android:textSize="16sp"
+                android:text="\nSave\n" />
 
             <Button
                 android:id="@+id/submit_btn"
@@ -103,7 +111,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:text="Submit" />
+                android:textSize="16sp"
+                android:text="\nSubmit\n" />
 
         </LinearLayout>
 
