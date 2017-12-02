@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        
+
+    <Button
+        android:id="@+id/btnViewReviews"
+        style="@android:style/Widget.Material.Light.Button.Borderless.Colored"
+        android:layout_width="301dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dip"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:fontFamily="casual"
+        android:text="View Reviews"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30sp" />
+     
+        <!--  Button to create a new product screen -->
+        
+
+    <Button
+        android:id="@+id/btnCreateReview"
+        style="@android:style/Widget.Material.Light.Button.Borderless.Colored"
+        android:layout_width="301dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dip"
+        android:fontFamily="casual"
+        android:text="Add New Reviews"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30sp" />
+
+
+
+
+    <Button
+        android:id="@+id/btnDBtesting"
+        style="@android:style/Widget.Material.Light.Button.Borderless.Colored"
+        android:layout_width="301dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dip"
+        android:fontFamily="casual"
+        android:text="Database Testing"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30sp" />
+     
+    </LinearLayout>

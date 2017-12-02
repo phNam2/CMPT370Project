@@ -32,8 +32,8 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
         String type = params[0];
 
         //Connect to local host
-        String login_url = "http://"+ IP_Address.getIPAdress() + "/select_testing.php";
-
+        //String login_url = "http://"+ IP_Address.getIPAdress() + "/select_testing.php";
+        String login_url = "https://vidaviajera.000webhostapp.com/php/select_testing.php";
 
         if (type.equals("login")) {
             try {

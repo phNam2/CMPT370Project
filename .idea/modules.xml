@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CMPT370GroupProject.iml" filepath="$PROJECT_DIR$/CMPT370GroupProject.iml" />
-      <module fileurl="file://C:\individual\subject\Term 2017-2018 1\cmpt 370\project\CMPT370GroupProject\GoodRepo.iml" filepath="C:\individual\subject\Term 2017-2018 1\cmpt 370\project\CMPT370GroupProject\GoodRepo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/junit-4.12/junit-4.12.iml" filepath="$PROJECT_DIR$/junit-4.12/junit-4.12.iml" />
       <module fileurl="file://$PROJECT_DIR$/mysql-5.1/mysql-5.1.iml" filepath="$PROJECT_DIR$/mysql-5.1/mysql-5.1.iml" />
