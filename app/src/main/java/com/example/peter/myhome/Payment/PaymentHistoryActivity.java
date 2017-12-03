@@ -1,9 +1,12 @@
 package com.example.peter.myhome.Payment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.peter.myhome.Current_User;
@@ -27,6 +30,7 @@ public class PaymentHistoryActivity extends AppCompatActivity implements Runnabl
     private LinkedList<Integer> amount = null;
     private LinkedList<String> met = null;
     private LinkedList<Timestamp> date = null;
+    public String sql = "";
 
     public void run() {
 
@@ -37,10 +41,7 @@ public class PaymentHistoryActivity extends AppCompatActivity implements Runnabl
 
             Connection con = PaymentActivity.con;
             try{
-                String sql;
 
-                sql
-                        = "SELECT Amount, Method, Payment_date FROM Payment WHERE Tenant_ID=?";
                 PreparedStatement prest = con.prepareStatement(sql);
 
                 prest.setInt(1, Current_User.getUserID());
@@ -105,8 +106,51 @@ public class PaymentHistoryActivity extends AppCompatActivity implements Runnabl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.payment_history);
 
+        sql = "SELECT Amount, Method, Payment_date FROM Payment WHERE Tenant_ID=?";
+        callThead();
+    }
+
+    public void onButtonHistoryAmount(View v) {
+
+        sql = "SELECT Amount, Method, Payment_date FROM Payment WHERE Tenant_ID=? ORDER BY Amount";
+        Button history = (Button) findViewById(R.id.history_amount);
+        history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                callThead();
+            }
+        });
+    }
+
+    public void onButtonHistoryMethod(View v) {
+
+        sql = "SELECT Amount, Method, Payment_date FROM Payment WHERE Tenant_ID=? ORDER BY Method";
+        Button history = (Button) findViewById(R.id.history_method);
+        history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                callThead();
+            }
+        });
+    }
+
+    public void onButtonHistoryDate(View v) {
+
+        sql = "SELECT Amount, Method, Payment_date FROM Payment WHERE Tenant_ID=? ORDER BY Payment_date";
+        Button history = (Button) findViewById(R.id.history_date);
+        history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                callThead();
+            }
+        });
+    }
+
+    public void callThead() {
         Thread thread = new Thread(this);
         thread.start();
     }
-
 }
