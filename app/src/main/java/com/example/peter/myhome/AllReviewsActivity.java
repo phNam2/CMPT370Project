@@ -131,7 +131,7 @@ public class AllReviewsActivity extends ListActivity {
             // Building Parameters
             List<NameValuePair> params = new ArrayList<NameValuePair>();
             // getting JSON string from URL
-            String url_all_reviews = "https://vidaviajera.000webhostapp.com/php/get_all_reviews.php";
+            String url_all_reviews = "http://vidaviajera.tk/get_all_reviews.php";
             JSONObject json = jParser.makeHttpRequest(url_all_reviews, "GET", params);
 
             // Check your log cat for JSON reponse

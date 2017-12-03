@@ -110,6 +110,16 @@
             android:name="android.support.PARENT_ACTIVITY"
             android:value="com.example.peter.myhome.HomeActivity" />
         </activity>
+
+        <activity
+            android:name=".EditReviewActivity"
+            android:label="@string/title_activity_review_main"
+            android:parentActivityName=".AllReviewsActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.peter.myhome.AllReviewsActivity" />
+        </activity>
     </application>
 
 </manifest>

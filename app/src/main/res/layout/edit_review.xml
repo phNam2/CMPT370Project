@@ -5,74 +5,92 @@
     android:orientation="vertical" >
 
     <!-- Name Label -->
-    <TextView android:layout_width="fill_parent"
+    <TextView
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Product Name"
         android:paddingLeft="10dip"
         android:paddingRight="10dip"
         android:paddingTop="10dip"
-        android:textSize="17dip"/>
+        android:text="Property id"
+        android:textSize="17dip"
+        android:textStyle="bold" />
 
-    <!-- Input Name -->
-    <EditText android:id="@+id/inputName"
+    <!-- Input Property Id -->
+    <EditText
+        android:id="@+id/inputPropertyId"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="62dp"
         android:layout_margin="5dip"
-        android:layout_marginBottom="15dip"
-        android:singleLine="true"/>
+        android:layout_marginBottom="15dip" />
 
     <!-- Price Label -->
-    <TextView android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Price"
-        android:paddingLeft="10dip"
-        android:paddingRight="10dip"
-        android:paddingTop="10dip"
-        android:textSize="17dip"/>
-
-    <!-- Input Price -->
-    <EditText android:id="@+id/inputPrice"
+    <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dip"
-        android:layout_marginBottom="15dip"
-        android:singleLine="true"
-        android:inputType="numberDecimal"/>
-
-    <!-- Description Label -->
-    <TextView android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Description"
         android:paddingLeft="10dip"
         android:paddingRight="10dip"
         android:paddingTop="10dip"
-        android:textSize="17dip"/>
+        android:text="Review Details"
+        android:textSize="17dip"
+        android:textStyle="bold" />
+
+    <!-- Input Review Content -->
+    <EditText
+        android:id="@+id/inputReviewContent"
+        style="@android:style/Widget.Holo.Light.EditText"
+        android:layout_width="fill_parent"
+        android:layout_height="253dp"
+        android:layout_margin="5dip"
+        android:layout_marginBottom="15dip"
+        android:inputType="numberDecimal"
+        android:singleLine="true" />
+
+    <!-- Rating Label -->
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:paddingTop="10dip"
+        android:text="Rating"
+        android:textSize="17dip"
+        android:textStyle="bold" />
 
     <!-- Input description -->
-    <EditText android:id="@+id/inputDesc"
+    <EditText
+        android:id="@+id/inputRating"
+        style="@android:style/Widget.Holo.Light.EditText"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="78dp"
         android:layout_margin="5dip"
         android:layout_marginBottom="15dip"
-        android:lines="4"
-        android:gravity="top"/>
+        android:gravity="top"
+        android:lines="4" />
 
     <LinearLayout android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <!-- Button Create Product -->
-        <Button android:id="@+id/btnSave"
+        <Button
+            android:id="@+id/btnSave"
+            style="@android:style/Widget.Button"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/white"
             android:text="Save Changes"
-            android:layout_weight="1"/>
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold" />
 
         <!-- Button Create Product -->
-        <Button android:id="@+id/btnDelete"
+        <Button
+            android:id="@+id/btnDelete"
+            style="@android:style/Widget.Button"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="Delete"
-            android:layout_weight="1"/>
+             />
     </LinearLayout>
 
 </LinearLayout>

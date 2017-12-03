@@ -16,7 +16,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
+import android.os.StrictMode;
 
 
 public class EditReviewActivity extends Activity {
@@ -37,7 +37,7 @@ public class EditReviewActivity extends Activity {
     JSONParser jsonParser = new JSONParser();
 
     // single product url
-    private static final String url_review_detials = "http://10.0.2.2/android_connect/get_product_details.php";
+    private static final String url_review_detials = "http://vidaviajera.tk/get_review_details.php";
 
     // url to update product
     private static final String url_update_review = "http://10.0.2.2/android_connect/update_product.php";
@@ -47,37 +47,41 @@ public class EditReviewActivity extends Activity {
 
     // JSON Node names
     private static final String TAG_SUCCESS = "success";
-    private static final String TAG_PRODUCT = "product";
-    private static final String TAG_PID = "pid";
-    private static final String TAG_NAME = "name";
-    private static final String TAG_PRICE = "price";
-    private static final String TAG_DESCRIPTION = "description";
+    private static final String TAG_REVIEWS = "review";
+    private static final String TAG_RID = "review_id";
+    private static final String TAG_PROPERTY_ID = "property_id";
+    private static final String TAG_REVIEW_CONTENT = "review_content";
+
+    private static final String TAG_RATING = "rating";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.edit_review);
-
+        if (android.os.Build.VERSION.SDK_INT > 9) {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+        }
         // save button
         btnSave = (Button) findViewById(R.id.btnSave);
         btnDelete = (Button) findViewById(R.id.btnDelete);
 
-        // getting product details from intent
+        // getting review details from intent
         Intent i = getIntent();
 
-        // getting product id (pid) from intent
-        pid = i.getStringExtra(TAG_PID);
+        // getting review id (rid) from intent
+        rid = i.getStringExtra(TAG_RID);
 
-        // Getting complete product details in background thread
-        new GetProductDetails().execute();
+        // Getting complete review details in background thread
+        new GetReviewDetails().execute();
 
         // save button click event
         btnSave.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
-                // starting background task to update product
-                new SaveProductDetails().execute();
+                // starting background task to update review
+                new SaveReviewDetails().execute();
             }
         });
 
@@ -86,8 +90,8 @@ public class EditReviewActivity extends Activity {
 
             @Override
             public void onClick(View arg0) {
-                // deleting product in background thread
-                new DeleteProduct().execute();
+                // deleting review in background thread
+                new DeleteReview().execute();
             }
         });
 
@@ -96,7 +100,7 @@ public class EditReviewActivity extends Activity {
     /**
      * Background Async Task to Get complete product details
      */
-    class GetProductDetails extends AsyncTask<String, String, String> {
+    class GetReviewDetails extends AsyncTask<String, String, String> {
 
         /**
          * Before starting background thread Show Progress Dialog
@@ -104,15 +108,15 @@ public class EditReviewActivity extends Activity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            pDialog = new ProgressDialog(EditProductActivity.this);
-            pDialog.setMessage("Loading product details. Please wait...");
+            pDialog = new ProgressDialog(EditReviewActivity.this);
+            pDialog.setMessage("Loading review details. Please wait...");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(true);
             pDialog.show();
         }
 
         /**
-         * Getting product details in background thread
+         * Getting review details in background thread
          */
         protected String doInBackground(String... params) {
 
@@ -124,39 +128,42 @@ public class EditReviewActivity extends Activity {
                     try {
                         // Building Parameters
                         List<NameValuePair> params = new ArrayList<NameValuePair>();
-                        params.add(new BasicNameValuePair("pid", pid));
-
-                        // getting product details by making HTTP request
-                        // Note that product details url will use GET request
+                        params.add(new BasicNameValuePair("rid", rid));
+                        Log.d("rid", "ouhdc"+rid);
+                        // getting review details by making HTTP request
+                        // Note that review details url will use GET request
                         JSONObject json = jsonParser.makeHttpRequest(
-                                url_product_detials, "GET", params);
+                                url_review_detials, "GET", params);
 
                         // check your log for json response
-                        Log.d("Single Product Details", json.toString());
+                        Log.d("Single Review Details", json.toString());
 
                         // json success tag
                         success = json.getInt(TAG_SUCCESS);
                         if (success == 1) {
                             // successfully received product details
-                            JSONArray productObj = json
-                                    .getJSONArray(TAG_PRODUCT); // JSON Array
+                            JSONArray reviewObj = json
+                                    .getJSONArray(TAG_REVIEWS); // JSON Array
 
                             // get first product object from JSON Array
-                            JSONObject product = productObj.getJSONObject(0);
+                            JSONObject review = reviewObj.getJSONObject(0);
 
                             // product with this pid found
                             // Edit Text
-                            txtName = (EditText) findViewById(R.id.inputName);
-                            txtPrice = (EditText) findViewById(R.id.inputPrice);
-                            txtDesc = (EditText) findViewById(R.id.inputDesc);
+                            txtProperty_id = (EditText) findViewById(R.id.inputPropertyId);
+                            txtReviewContent = (EditText) findViewById(R.id.inputReviewContent);
 
+                            txtRating = (EditText) findViewById(R.id.inputRating);
                             // display product data in EditText
-                            txtName.setText(product.getString(TAG_NAME));
-                            txtPrice.setText(product.getString(TAG_PRICE));
-                            txtDesc.setText(product.getString(TAG_DESCRIPTION));
 
+
+
+                            txtProperty_id.setText(review.getString(TAG_PROPERTY_ID));
+                            txtReviewContent.setText(review.getString(TAG_REVIEW_CONTENT));
+
+                            txtRating.setText(review.getString(TAG_RATING));
                         } else {
-                            // product with pid not found
+                            // product with rid not found
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -180,7 +187,7 @@ public class EditReviewActivity extends Activity {
     /**
      * Background Async Task to  Save product Details
      */
-    class SaveProductDetails extends AsyncTask<String, String, String> {
+    class SaveReviewDetails extends AsyncTask<String, String, String> {
 
         /**
          * Before starting background thread Show Progress Dialog
@@ -189,32 +196,32 @@ public class EditReviewActivity extends Activity {
         protected void onPreExecute() {
             super.onPreExecute();
             pDialog = new ProgressDialog(EditReviewActivity.this);
-            pDialog.setMessage("Saving product ...");
+            pDialog.setMessage("Saving review ...");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(true);
             pDialog.show();
         }
 
         /**
-         * Saving product
+         * Saving review
          */
         protected String doInBackground(String... args) {
 
             // getting updated data from EditTexts
-            String name = txtName.getText().toString();
-            String price = txtPrice.getText().toString();
-            String description = txtDesc.getText().toString();
+            String property_id = txtProperty_id.getText().toString();
+            String review_content = txtReviewContent.getText().toString();
+            String rating = txtRating.getText().toString();
 
             // Building Parameters
             List<NameValuePair> params = new ArrayList<NameValuePair>();
-            params.add(new BasicNameValuePair(TAG_PID, pid));
-            params.add(new BasicNameValuePair(TAG_NAME, name));
-            params.add(new BasicNameValuePair(TAG_PRICE, price));
-            params.add(new BasicNameValuePair(TAG_DESCRIPTION, description));
+            params.add(new BasicNameValuePair(TAG_RID, rid));
+            params.add(new BasicNameValuePair(TAG_REVIEW_CONTENT, review_content));
+            params.add(new BasicNameValuePair(TAG_PROPERTY_ID, property_id));
+            params.add(new BasicNameValuePair(TAG_RATING, rating));
 
             // sending modified data through http request
             // Notice that update product url accepts POST method
-            JSONObject json = jsonParser.makeHttpRequest(url_update_product,
+            JSONObject json = jsonParser.makeHttpRequest(url_update_review,
                     "POST", params);
 
             // check json success tag
@@ -242,7 +249,7 @@ public class EditReviewActivity extends Activity {
          * After completing background task Dismiss the progress dialog
          **/
         protected void onPostExecute(String file_url) {
-            // dismiss the dialog once product uupdated
+            // dismiss the dialog once review updated
             pDialog.dismiss();
         }
     }
@@ -250,7 +257,7 @@ public class EditReviewActivity extends Activity {
     /*****************************************************************
      * Background Async Task to Delete Product
      * */
-    class DeleteProduct extends AsyncTask<String, String, String> {
+    class DeleteReview extends AsyncTask<String, String, String> {
 
         /**
          * Before starting background thread Show Progress Dialog
@@ -258,8 +265,8 @@ public class EditReviewActivity extends Activity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            pDialog = new ProgressDialog(EditProductActivity.this);
-            pDialog.setMessage("Deleting Product...");
+            pDialog = new ProgressDialog(EditReviewActivity.this);
+            pDialog.setMessage("Deleting Review...");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(true);
             pDialog.show();
@@ -275,19 +282,19 @@ public class EditReviewActivity extends Activity {
             try {
                 // Building Parameters
                 List<NameValuePair> params = new ArrayList<NameValuePair>();
-                params.add(new BasicNameValuePair("pid", pid));
+                params.add(new BasicNameValuePair("rid", rid));
 
                 // getting product details by making HTTP request
                 JSONObject json = jsonParser.makeHttpRequest(
-                        url_delete_product, "POST", params);
+                        url_delete_review, "POST", params);
 
                 // check your log for json response
-                Log.d("Delete Product", json.toString());
+                Log.d("Delete Review", json.toString());
 
                 // json success tag
                 success = json.getInt(TAG_SUCCESS);
                 if (success == 1) {
-                    // product successfully deleted
+                    // review successfully deleted
                     // notify previous activity by sending code 100
                     Intent i = getIntent();
                     // send result code 100 to notify about product deletion
