@@ -1,7 +1,5 @@
 package com.example.peter.myhome.Messaging;
 
-
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -10,7 +8,7 @@ import java.sql.SQLException;
 
 public class MessagingDatabaseConn {
 
-    // TODO: Fix Database Connection Error When Run.
+    // TODO: Fix Database Connection Error When Run. WHY CAN'T IT FIND THE JDBC DRIVER!!!!!
 
     /**
      * This gets the messages from the database for the specified User.
@@ -30,8 +28,7 @@ public class MessagingDatabaseConn {
         int count = 0;
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection
-                    ("jdbc:mysql://db.cs.usask.ca:3306/cmpt370_magic8b","cmpt370_magic8b","p2z9ZhNfoKTOFsXpqAnP");
+            con = DriverManager.getConnection("jdbc:mysql://db.cs.usask.ca:3306/cmpt370_magic8b","cmpt370_magic8b","p2z9ZhNfoKTOFsXpqAnP");
             try{
                 PreparedStatement prest = con.prepareStatement(sql);
                 ResultSet rs = prest.executeQuery();
@@ -57,7 +54,7 @@ public class MessagingDatabaseConn {
         return TheMessages;
     }
 
-    /**
+      /**
      * This is a helper function to insert a message into the database to "send" a message to another user.
      * @param SenderUserId A int containing the Sender's User Id to know where the message is from.
      * @param RecipientUserId A int containing the Recipient's User Id to know where the message is going.
@@ -66,13 +63,12 @@ public class MessagingDatabaseConn {
      */
     public void sendToDatabase(int SenderUserId, int RecipientUserId, String Subject, String Message) {
         String sql = "INSERT INTO Messages(SenderUserId, RecipientUserId, Subject, Message) " +
-                        "VALUES (" + SenderUserId + ", " + RecipientUserId + ", " + Subject + ", " + Message + ", FALSE);";
+                "VALUES (" + SenderUserId + ", " + RecipientUserId + ", " + Subject + ", " + Message + ", FALSE);";
 
         Connection con = null;
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection
-                    ("jdbc:mysql://db.cs.usask.ca:3306/cmpt370_magic8b","cmpt370_magic8b","p2z9ZhNfoKTOFsXpqAnP");
+            con = DriverManager.getConnection("jdbc:mysql://db.cs.usask.ca:3306/cmpt370_magic8b","cmpt370_magic8b","p2z9ZhNfoKTOFsXpqAnP");
             try{
                 PreparedStatement prest = con.prepareStatement(sql);
                 prest.close();
@@ -106,10 +102,12 @@ public class MessagingDatabaseConn {
 
     /**
      * Testing Functions above.
-     * @param args
      */
     public static void main(String args[]) {
+        System.out.println("Started Testing");
         MessagingDatabaseConn Test = new MessagingDatabaseConn();
         Test.sendToDatabase(1, 2, "Test Subject", "Test Message");
+        System.out.println("Finished Testing");
+
     }
 }
