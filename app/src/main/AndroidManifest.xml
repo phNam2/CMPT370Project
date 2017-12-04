@@ -55,6 +55,10 @@
             android:label="Lease.TenantLeaseConfirm"
             android:parentActivityName="Lease.TenantLeaseConfirm" />
         <activity
+            android:name=".Messaging.ReadMessageActivity"
+            android:label="Messaging.ReadMessageActivity"
+            android:parentActivityName="Messaging.ReadMessageActivity" />
+        <activity
             android:name=".ReviewActivity"
             android:label="@string/title_activity_review"
             android:parentActivityName=".HomeActivity">
