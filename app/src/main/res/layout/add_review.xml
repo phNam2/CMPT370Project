@@ -20,39 +20,14 @@
         android:textStyle="bold" />
      
         <!-- Input Name -->
-        <EditText android:id="@+id/propertyID"
+        <EditText android:id="@+id/inputPropertyID"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dip"
             android:layout_marginBottom="15dip"
             android:singleLine="true"/>
      
-        <!-- Desc Label -->
-        
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="casual"
-        android:paddingLeft="15dip"
-        android:paddingRight="15dip"
-        android:paddingTop="15dip"
-        android:text="Tenant ID"
-        android:textColor="@color/colorPrimary"
-        android:textSize="20dip"
-        android:textStyle="bold" />
      
-        <!-- Input Price -->
-        <EditText android:id="@+id/tenantID"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dip"
-            android:layout_marginBottom="15dip"
-            android:singleLine="true"
-            android:inputType="numberDecimal"/>
-     
-        <!-- Description Label -->
-        
 
     <TextView
         android:layout_width="fill_parent"
@@ -70,9 +45,9 @@
         
 
     <EditText
-        android:id="@+id/Description"
+        android:id="@+id/inputReviewContent"
         android:layout_width="fill_parent"
-        android:layout_height="242dp"
+        android:layout_height="157dp"
         android:layout_margin="5dip"
         android:layout_marginBottom="10dip"
         android:gravity="top"
@@ -80,6 +55,27 @@
      
         <!-- Button Create Review -->
         
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:paddingLeft="15dip"
+        android:paddingRight="15dip"
+        android:paddingTop="15dip"
+        android:text="Rating"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20dip"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/inputRating"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dip"
+        android:layout_marginBottom="15dip"
+        android:inputType="numberDecimal"
+        android:singleLine="true" />
 
     <Button
         android:id="@+id/btnCreateReview"
