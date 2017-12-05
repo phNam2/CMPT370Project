@@ -84,7 +84,6 @@ public class MessagingDatabaseConn {
             e.printStackTrace();
             System.out.println("Exception thrown.");
         }
-        System.out.println("Finished Send To DB");
     }
 
     /**
@@ -94,6 +93,30 @@ public class MessagingDatabaseConn {
      */
     public void deleteMessageFromDatabase(int UserId, int MessageId) {
         // TODO: Finish Delete.
+        String sql = "UPDATE Messages " +
+                "SET Deleted = TRUE " +
+                "WHERE RecipientUserId = " + UserId +
+                " AND id = " + MessageId;
+
+        Connection con = null;
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://db.cs.usask.ca:3306/cmpt370_magic8b","cmpt370_magic8b","p2z9ZhNfoKTOFsXpqAnP");
+            try{
+                Statement stmt = con.createStatement();
+                stmt.executeUpdate(sql);
+
+                con.close();
+            }
+            catch (SQLException s){
+                System.out.println("SQL statement is not executed!");
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            System.out.println("Exception thrown.");
+        }
+
     }
 
     /**
@@ -110,7 +133,10 @@ public class MessagingDatabaseConn {
     public static void main(String args[]) {
         System.out.println("Started Testing");
         MessagingDatabaseConn Test = new MessagingDatabaseConn();
-        Test.sendToDatabase(1, 2, "Test Subject", "Test Message");
+//        Test.sendToDatabase(1, 2, "Test Subject", "Test Message");
+
+
+        Test.deleteMessageFromDatabase(2, 3);
         System.out.println("Finished Testing");
 
     }
