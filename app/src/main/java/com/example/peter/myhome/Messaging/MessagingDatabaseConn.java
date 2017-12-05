@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class MessagingDatabaseConn {
 
@@ -62,16 +63,17 @@ public class MessagingDatabaseConn {
      * @param Message A String containing the body of the Message.
      */
     public void sendToDatabase(int SenderUserId, int RecipientUserId, String Subject, String Message) {
-        String sql = "INSERT INTO Messages(SenderUserId, RecipientUserId, Subject, Message) " +
-                "VALUES (" + SenderUserId + ", " + RecipientUserId + ", " + Subject + ", " + Message + ", FALSE);";
+        String sql = "INSERT INTO Messages(SenderUserId, RecipientUserId, Subject, Message, Deleted) " +
+                "VALUES (" + SenderUserId + ", " + RecipientUserId + ", '" + Subject + "', '" + Message + "', FALSE);";
 
         Connection con = null;
         try{
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://db.cs.usask.ca:3306/cmpt370_magic8b","cmpt370_magic8b","p2z9ZhNfoKTOFsXpqAnP");
             try{
-                PreparedStatement prest = con.prepareStatement(sql);
-                prest.close();
+                Statement stmt = con.createStatement();
+                stmt.executeUpdate(sql);
+
                 con.close();
             }
             catch (SQLException s){
@@ -80,7 +82,9 @@ public class MessagingDatabaseConn {
         }
         catch (Exception e){
             e.printStackTrace();
+            System.out.println("Exception thrown.");
         }
+        System.out.println("Finished Send To DB");
     }
 
     /**
