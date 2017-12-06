@@ -55,23 +55,6 @@
             android:label="Lease.TenantLeaseConfirm"
             android:parentActivityName="Lease.TenantLeaseConfirm" />
         <activity
-            android:name=".ReviewActivity"
-            android:label="@string/title_activity_review"
-            android:parentActivityName=".HomeActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.peter.myhome.HomeActivity" />
-        </activity>
-        <activity
-            android:name=".ReviewHistoryActivity"
-            android:label="@string/title_activity_review_history"
-            android:parentActivityName=".HomeActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.peter.myhome.HomeActivity" />
-        </activity>
-        <activity
             android:name=".DatabaseTesting.DatabaseTestingActivity"
             android:label="Testing"
             android:parentActivityName=".Payment.PaymentActivity" />
@@ -128,6 +111,45 @@
             android:name=".Payment.PaymentHistoryActivity"
             android:label="Payment"
             android:parentActivityName=".Payment.PaymentActivity" />
+        <activity
+            android:name=".ReviewMainActivity"
+            android:label="@string/title_activity_review_main"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.peter.myhome.HomeActivity" />
+        </activity>
+
+        <activity
+            android:name=".AllReviewsActivity"
+            android:label="@string/title_activity_review_main"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/AppTheme">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.peter.myhome.HomeActivity" />
+        </activity>
+
+        <activity
+            android:name=".EditReviewActivity"
+            android:label="@string/title_activity_review_main"
+            android:parentActivityName=".AllReviewsActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.peter.myhome.AllReviewsActivity" />
+        </activity>
+
+        <activity
+            android:name=".NewReviewActivity"
+            android:label="@string/title_activity_review_main"
+            android:parentActivityName=".ReviewMainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.peter.myhome.ReviewMainActivity" />
+        </activity>
     </application>
 
 </manifest>

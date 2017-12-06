@@ -13,11 +13,11 @@
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Review" />
+            android:title="All Review" />
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Review History" />
+            android:title="Add Review" />
         <item
             android:id="@+id/nav_share"
             android:icon="@drawable/ic_menu_share"
