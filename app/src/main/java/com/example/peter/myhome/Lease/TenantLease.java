@@ -168,6 +168,12 @@ public class TenantLease extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * Calls asynctask to send data to database
+     * @param
+     * @return
+     *
+     */
     public void buttonSubmit(){
 
         Send objSend = new Send ();
@@ -187,7 +193,13 @@ public class TenantLease extends AppCompatActivity {
 
 
 
-        protected String doInBackground (String... strings){
+            /**
+             * Calls asynctask to send data to database
+             * @param String
+             * @return msg
+             *
+            **/
+            protected String doInBackground (String... strings){
 
             String s[] = nameText.split(":");
             String nameText = s[1];
@@ -242,4 +254,4 @@ public class TenantLease extends AppCompatActivity {
 
 }
 
-//}
+

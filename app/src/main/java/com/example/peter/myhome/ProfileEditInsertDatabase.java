@@ -32,7 +32,7 @@ public class ProfileEditInsertDatabase extends AsyncTask<String, Void,Void> {
         ps.setString(2, lastName);
         ps.setString(3, insertStrings[1]);
         ps.setString(4, insertStrings[2]);
-        ps.setString(5, Integer.toString(LoginActivity.currentUser));
+        ps.setString(5, Integer.toString(Current_User.getUserID()));
 
         ps.executeUpdate();
 
