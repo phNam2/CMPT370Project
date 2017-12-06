@@ -10,6 +10,9 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 
 public abstract class SearchHelper extends SQLiteOpenHelper {
+
+
+
     public SearchHelper(Context context){
         super(context, "Property_Address.db",null,1);
     }
@@ -18,7 +21,7 @@ public abstract class SearchHelper extends SQLiteOpenHelper {
 //        db.execSQL("create table Property_Address(Property_id,Street char(45),City char(45),Country char(45),PostalCode char(45))");
     }
 
-    public SearchResult findResult(String location){
+    public SearchResultActivity findResult(String location){
         String query =null;
         //"Select * From " + Property_Address + "Where" + Street/city/country = location;
 
@@ -26,8 +29,8 @@ public abstract class SearchHelper extends SQLiteOpenHelper {
 
         Cursor cursor = db.rawQuery(query, null);
 
-        SearchResult result = new SearchResult();
-
+        SearchResultActivity result = new SearchResultActivity();
+/*
         if (cursor.moveToFirst()){
             cursor.moveToFirst();
             result.setStree(cursor.getString(1));
@@ -38,8 +41,9 @@ public abstract class SearchHelper extends SQLiteOpenHelper {
         }else {
             result = null;
         }
-        db.close();
+*/        db.close();
         return result;
     }
 
 }
+

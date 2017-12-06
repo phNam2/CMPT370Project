@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.NumberPicker;
 
 public class SearchGuestActivity extends AppCompatActivity {
+    public static int[] textfile = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +21,8 @@ public class SearchGuestActivity extends AppCompatActivity {
         adult.setWrapSelectorWheel(true);
         adult.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
-            public void onValueChange(NumberPicker numberPicker, int i, int i1) {
-
+            public void onValueChange(NumberPicker numberPicker, int oldnum, int newnum) {
+ //               textfile[0] = newnum;
             }
         });
 
@@ -30,29 +31,18 @@ public class SearchGuestActivity extends AppCompatActivity {
         child.setWrapSelectorWheel(true);
         child.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
             @Override
-            public void onValueChange(NumberPicker numberPicker, int i, int i1) {
-
-            }
-        });
-/*
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onValueChange(NumberPicker numberPicker, int oldnum, int newnum) {
+//                textfile[1] = newnum;
             }
         });
 
- */
     }
 
 
     public void SaveGuests(View view) {
-
+        Intent search = new Intent(SearchGuestActivity.this, SearchResultActivity.class);
+        search.putExtra(String.valueOf(textfile),textfile);
+  //      startActivity(search);
     }
 
     public void BackButton(View view) {

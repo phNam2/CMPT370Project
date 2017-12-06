@@ -105,9 +105,13 @@
             android:label="Payment"
             android:parentActivityName=".PaymentActivity" />
         <activity
-            android:name=".PaymentFail"
+        android:name=".PaymentFail"
+        android:label="Payment"
+        android:parentActivityName=".PaymentActivity" />
+        <activity
+            android:name=".SearchResultActivity"
             android:label="Payment"
-            android:parentActivityName=".PaymentActivity" />
+            android:parentActivityName=".SearchActivity" />
     </application>
 
 </manifest>
