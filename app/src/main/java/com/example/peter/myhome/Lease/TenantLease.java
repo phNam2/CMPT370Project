@@ -1,6 +1,6 @@
 package com.example.peter.myhome.Lease;
 
-import android.content.Intent;
+
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -12,17 +12,17 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
+
 import android.widget.Toast;
-
-
 import com.example.peter.myhome.R;
-
-import static com.example.peter.myhome.R.id.address;
 import static com.example.peter.myhome.R.id.name;
-import static com.example.peter.myhome.R.id.propertyName;
-
 import java.sql.*;
+
+/*
+
+    Created by Lisa
+
+ */
 
 public class TenantLease extends AppCompatActivity {
 
@@ -141,23 +141,6 @@ public class TenantLease extends AppCompatActivity {
 
 
     }
-
-
-
-
-/*
-    public void onButtonSubmit(View v) {
-            Button submit = (Button) findViewById(R.id.submit);
-            submit.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    startActivity(new Intent(TenantLease.this, TenantLeaseConfirm.class));
-                }
-            })
-*/
-
-
-
 
     /**
      * Checks all editText fields and if they are not empty it will set button to be clickable
