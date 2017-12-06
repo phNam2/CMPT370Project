@@ -114,14 +114,14 @@ public class NewReviewActivity extends Activity {
                 int success = json.getInt(TAG_SUCCESS);
 
                 if (success == 1) {
-                    // successfully created product
+                    // successfully created review
                     Intent i = new Intent(getApplicationContext(), AllReviewsActivity.class);
                     startActivity(i);
 
                     // closing this screen
                     finish();
                 } else {
-                    // failed to create product
+                    // failed to create review
                 }
             } catch (JSONException e) {
                 e.printStackTrace();

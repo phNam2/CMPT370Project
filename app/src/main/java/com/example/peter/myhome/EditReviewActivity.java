@@ -36,13 +36,13 @@ public class EditReviewActivity extends Activity {
     // JSON parser class
     JSONParser jsonParser = new JSONParser();
 
-    // single product url
+    // single review url
     private static final String url_review_detials = "http://vidaviajera.tk/get_review_details.php";
 
-    // url to update product
+    // url to update review
     private static final String url_update_review = "http://10.0.2.2/android_connect/update_product.php";
 
-    // url to delete product
+    // url to delete review
     private static final String url_delete_review = "http://10.0.2.2/android_connect/delete_product.php";
 
     // JSON Node names
@@ -98,7 +98,7 @@ public class EditReviewActivity extends Activity {
     }
 
     /**
-     * Background Async Task to Get complete product details
+     * Background Async Task to Get complete review details
      */
     class GetReviewDetails extends AsyncTask<String, String, String> {
 
@@ -141,20 +141,20 @@ public class EditReviewActivity extends Activity {
                         // json success tag
                         success = json.getInt(TAG_SUCCESS);
                         if (success == 1) {
-                            // successfully received product details
+                            // successfully received review details
                             JSONArray reviewObj = json
                                     .getJSONArray(TAG_REVIEWS); // JSON Array
 
                             // get first product object from JSON Array
                             JSONObject review = reviewObj.getJSONObject(0);
 
-                            // product with this pid found
+                            // review with this pid found
                             // Edit Text
                             txtProperty_id = (EditText) findViewById(R.id.inputPropertyId);
                             txtReviewContent = (EditText) findViewById(R.id.inputReviewContent);
 
                             txtRating = (EditText) findViewById(R.id.inputRating);
-                            // display product data in EditText
+                            // display review data in EditText
 
 
 
@@ -185,7 +185,7 @@ public class EditReviewActivity extends Activity {
     }
 
     /**
-     * Background Async Task to  Save product Details
+     * Background Async Task to  Save review Details
      */
     class SaveReviewDetails extends AsyncTask<String, String, String> {
 
@@ -231,11 +231,11 @@ public class EditReviewActivity extends Activity {
                 if (success == 1) {
                     // successfully updated
                     Intent i = getIntent();
-                    // send result code 100 to notify about product update
+                    // send result code 100 to notify about review update
                     setResult(100, i);
                     finish();
                 } else {
-                    // failed to update product
+                    // failed to update review
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -255,7 +255,7 @@ public class EditReviewActivity extends Activity {
     }
 
     /*****************************************************************
-     * Background Async Task to Delete Product
+     * Background Async Task to Delete review
      * */
     class DeleteReview extends AsyncTask<String, String, String> {
 
@@ -273,7 +273,7 @@ public class EditReviewActivity extends Activity {
         }
 
         /**
-         * Deleting product
+         * Deleting review
          */
         protected String doInBackground(String... args) {
 
@@ -284,7 +284,7 @@ public class EditReviewActivity extends Activity {
                 List<NameValuePair> params = new ArrayList<NameValuePair>();
                 params.add(new BasicNameValuePair("rid", rid));
 
-                // getting product details by making HTTP request
+                // getting review details by making HTTP request
                 JSONObject json = jsonParser.makeHttpRequest(
                         url_delete_review, "POST", params);
 
@@ -297,7 +297,7 @@ public class EditReviewActivity extends Activity {
                     // review successfully deleted
                     // notify previous activity by sending code 100
                     Intent i = getIntent();
-                    // send result code 100 to notify about product deletion
+                    // send result code 100 to notify about review deletion
                     setResult(100, i);
                     finish();
                 }
@@ -312,7 +312,7 @@ public class EditReviewActivity extends Activity {
          * After completing background task Dismiss the progress dialog
          **/
         protected void onPostExecute(String file_url) {
-            // dismiss the dialog once product deleted
+            // dismiss the dialog once review deleted
             pDialog.dismiss();
 
         }

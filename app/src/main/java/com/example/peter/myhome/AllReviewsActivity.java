@@ -61,7 +61,7 @@ public class AllReviewsActivity extends ListActivity {
         // Hashmap for ListView
         reviewsList = new ArrayList<>();
 
-        // Loading products in Background Thread
+        // Loading reviews in Background Thread
         new LoadAllReviews().execute();
 
         // Get listview

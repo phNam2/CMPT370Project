@@ -23,7 +23,7 @@
         android:layout_margin="5dip"
         android:layout_marginBottom="15dip" />
 
-    <!-- Price Label -->
+
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -70,7 +70,7 @@
     <LinearLayout android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <!-- Button Create Product -->
+
         <Button
             android:id="@+id/btnSave"
             style="@android:style/Widget.Button"
@@ -82,7 +82,7 @@
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold" />
 
-        <!-- Button Create Product -->
+
         <Button
             android:id="@+id/btnDelete"
             style="@android:style/Widget.Button"
