@@ -56,7 +56,7 @@ public class UserProfileActivity extends AppCompatActivity {
 
 
     private void populateFields(){
-        ProfileViewPopulateFields m = new ProfileViewPopulateFields(Integer.toString(LoginActivity.currentUser), name, email, phone);
+        ProfileViewPopulateFields m = new ProfileViewPopulateFields(Integer.toString(Current_User.UserID), name, email, phone);
         m.execute();
         //TODO need to create a static userId variable. Could also use email
         //m.doInBackground(), );

@@ -64,7 +64,7 @@ public class UserProfileEditActivity extends AppCompatActivity {
     }
 
     private void populateFields(){
-        ProfileViewPopulateFields m = new ProfileViewPopulateFields(Integer.toString(LoginActivity.currentUser), name, email, phone);
+        ProfileViewPopulateFields m = new ProfileViewPopulateFields(Integer.toString(Current_User.UserID), name, email, phone);
         m.execute();
 
 
