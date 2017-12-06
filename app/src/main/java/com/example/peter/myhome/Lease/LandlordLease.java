@@ -13,6 +13,10 @@ import android.widget.EditText;
 import com.example.peter.myhome.R;
 
 /*
+    Created by Lisa
+
+ */
+/*
     The Lease use case from the Landlord side.
     Incomplete since we did not create a view from the landlord side.
  */

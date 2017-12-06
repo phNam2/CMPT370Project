@@ -9,6 +9,17 @@ import android.view.View;
 
 import com.example.peter.myhome.R;
 
+
+/*
+
+    Created by Lisa
+
+ */
+
+/*
+    Class that would have been used for further extensions of project but
+    no more time since we don't have separate landlord login side
+ */
 public class TenantLeaseConfirm extends AppCompatActivity {
 
     @Override
