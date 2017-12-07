@@ -22,6 +22,10 @@ public class MessagingMailboxActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+    }
+
+    public void onNewMessageClick(View v) {
+
         // This opens the create a new message screen.
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

@@ -11,9 +11,9 @@ import com.example.peter.myhome.R;
 public class ReadMessageActivity extends AppCompatActivity {
 
     // Gets the TextViews that will be populated with the messages.
-    TextView FromTextView = (TextView)findViewById(R.id.FromDataLb);
-    TextView SubjectTextView = (TextView)findViewById(R.id.SubjectDataLb);
-    TextView MessageTextView = (TextView)findViewById(R.id.messageDataLb);
+    TextView FromTextView = null;
+    TextView SubjectTextView = null;
+    TextView MessageTextView = null;
 
 
     @Override
@@ -21,6 +21,10 @@ public class ReadMessageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState, persistentState);
 
         UserMessages TheMessage = new UserMessages(1, 2, "TestSubject", "Test Message"); // Temp for testing and showing no error here.
+
+        FromTextView = (TextView)findViewById(R.id.FromDataLb);
+        SubjectTextView = (TextView)findViewById(R.id.SubjectDataLb);
+        MessageTextView = (TextView)findViewById(R.id.messageDataLb);
         // TODO: Connect Message being passed in to this Activity somehow?
         OpenMessage(TheMessage);
     }
