@@ -100,6 +100,7 @@
             android:label="Payment"
             android:parentActivityName=".Payment.PaymentActivity" />
         <activity
+<<<<<<< HEAD
             android:name=".Payment.PaymentFail"
             android:label="Payment"
             android:parentActivityName=".Payment.PaymentActivity" />
@@ -154,6 +155,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.peter.myhome.ReviewMainActivity" />
         </activity>
+=======
+        android:name=".PaymentFail"
+        android:label="Payment"
+        android:parentActivityName=".PaymentActivity" />
+        <activity
+            android:name=".SearchResultActivity"
+            android:label="Payment"
+            android:parentActivityName=".SearchActivity" />
+>>>>>>> feature/search_2
     </application>
 
 </manifest>
