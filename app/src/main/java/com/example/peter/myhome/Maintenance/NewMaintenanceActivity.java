@@ -1,14 +1,12 @@
 package com.example.peter.myhome.Maintenance;
 
 import android.annotation.TargetApi;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.MultiAutoCompleteTextView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.peter.myhome.R;
 import com.example.peter.myhome.Current_User;
@@ -18,34 +16,29 @@ import java.util.Calendar;
 
 public class NewMaintenanceActivity extends AppCompatActivity {
 
+    // Required fields
     private EditText titleText;
-    private TextView timeText, dateText, buildingText, tenantText, landlordText;
-    private MultiAutoCompleteTextView commentText;
+    private TextView timeText, dateText, buildingText, landlordText;
+    private EditText commentText;
     private Current_User user;
-    private int tenant;
-
+    int buildingInt, landlordInt;
+    private String title, time, date, comment, building, landlord;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_maintenance);
-
         setupPage();
+        defineButtons();
     }
 
-    // To get text entered in text box
-    public String grabText(EditText textbox) {
-        String content = textbox.getText().toString();
-        return content;
-    }
-
-    // Set up the page with auto-filled sections
+    // Set up the page with time, date, landlord and building auto-filled
     @TargetApi(25)
     public void setupPage() {
         Calendar c = Calendar.getInstance();
 
-//        titleText = (EditText) findViewById(R.id.title_text);
-//        titleText.setText("Request Title");
+        titleText = (EditText) findViewById(R.id.title_text);
+        commentText = (EditText) findViewById(R.id.comment_text);
 
         SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
         String formatTime = timeFormat.format(c.getTime());
@@ -57,41 +50,60 @@ public class NewMaintenanceActivity extends AppCompatActivity {
         dateText = (TextView) findViewById(R.id.date_text);
         dateText.setText("Date: " + formatDate);
 
-        // Grab building from db
         buildingText = (TextView) findViewById(R.id.building_text);
-        buildingText.setText("Building: ");
-
-        // Grab tenant from db
-        tenantText = (TextView) findViewById(R.id.tenant_text);
-        tenant = user.getUserID();
-        tenantText.setText("Tenant: ");
-
-        // Grab landlord from db
         landlordText = (TextView) findViewById(R.id.landlord_text);
-        landlordText.setText("Landlord: ");
 
-//        commentText = (MultiAutoCompleteTextView) findViewById(R.id.comment_text);
-//        commentText.setText("Insert comments...");
+        new MaintenanceDbGrabRequestInfo(user.getUserID(), buildingText, landlordText).execute();
     }
 
-    // The buttons
+    // Grab and assign values to respective variables to send to database
+    public void assignValues(){
+        title = titleText.getText().toString();
+        time = timeText.getText().toString();
+        date = dateText.getText().toString();
+        comment = commentText.getText().toString();
+
+        building = buildingText.getText().toString();
+        String s3[] = building.split(":");
+        String s4[] = s3[1].split(" ");
+        building = s4[1];
+        buildingInt = Integer.parseInt(building);
+
+        landlord = landlordText.getText().toString();
+        String s5[] = landlord.split(":");
+        String s6[] = s5[1].split(" ");
+        landlord = s6[1];
+        landlordInt = Integer.parseInt(landlord);
+    }
+
+    // Insert new maintenance request into database
+    public void transferToDB(){
+        MaintenanceDBInsert mdi = new MaintenanceDBInsert(user.getUserID(), title, time, date, buildingInt, landlordInt, comment);
+        mdi.execute();
+    }
+
+    // Defines the button
     public void defineButtons() {
-        findViewById(R.id.save_btn).setOnClickListener(buttonClickListener);
         findViewById(R.id.submit_btn).setOnClickListener(buttonClickListener);
     }
 
-    // Actions for clicking buttons
+    // Actions for clicking button
     private View.OnClickListener buttonClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             switch (view.getId()) {
-                case R.id.save_btn:
-                    break;
                 case R.id.submit_btn:
+
+                    assignValues();
+                    transferToDB();
+
+                    Toast toast = new Toast(getApplicationContext());
+                    Toast.makeText(getApplicationContext(), "Request Submitted!", Toast.LENGTH_SHORT).show();
+
+                    finish();
                     break;
             }
         }
     };
-
 
 }
