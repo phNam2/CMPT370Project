@@ -55,8 +55,6 @@
             android:label="Lease.TenantLeaseConfirm"
             android:parentActivityName="Lease.TenantLeaseConfirm" />
         <activity
-<<<<<<< HEAD
-=======
             android:name=".Messaging.ReadMessageActivity"
             android:label="Messaging.ReadMessageActivity"
             android:parentActivityName="Messaging.ReadMessageActivity" />
@@ -78,7 +76,6 @@
                 android:value="com.example.peter.myhome.HomeActivity" />
         </activity>
         <activity
->>>>>>> feature/Another_Messaging
             android:name=".DatabaseTesting.DatabaseTestingActivity"
             android:label="Testing"
             android:parentActivityName=".Payment.PaymentActivity" />
