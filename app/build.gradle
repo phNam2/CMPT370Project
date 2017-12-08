@@ -30,13 +30,10 @@ android {
         exclude 'META-INF/notice.txt'
         exclude 'META-INF/ASL2.0'
     }
-<<<<<<< HEAD
 }
 
 android {
     useLibrary 'org.apache.http.legacy'
-=======
->>>>>>> feature/search_2
 }
 
 dependencies {
