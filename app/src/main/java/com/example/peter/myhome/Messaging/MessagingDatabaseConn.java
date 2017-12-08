@@ -9,8 +9,6 @@ import java.sql.Statement;
 
 public class MessagingDatabaseConn {
 
-    // TODO: Fix Database Connection Error When Run. WHY CAN'T IT FIND THE JDBC DRIVER!!!!!
-
     /**
      * This gets the messages from the database for the specified User.
      * @param UserId A int containing the User Id.
@@ -34,6 +32,7 @@ public class MessagingDatabaseConn {
                 PreparedStatement prest = con.prepareStatement(sql);
                 ResultSet rs = prest.executeQuery();
                 while (rs.next()){ // Gets the Messsages and puts them into an array of User Messages.
+//                    int MessageId = rs.getInt("MessageId");
                     int SenderId = rs.getInt("SenderUserId");
                     int RecipientId = rs.getInt("RecipientUserId");
                     String Subject = rs.getString("Subject");
