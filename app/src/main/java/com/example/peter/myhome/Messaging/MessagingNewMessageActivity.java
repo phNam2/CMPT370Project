@@ -1,44 +1,46 @@
 package com.example.peter.myhome.Messaging;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.EditText;
 
 import com.example.peter.myhome.R;
 
 
 public class MessagingNewMessageActivity extends AppCompatActivity {
 
-    /*
+    EditText RecipientInputBox = null;
+    EditText SubjectInputBox = null;
+    EditText MessageMessageBox = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_messaging_new_message);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        RecipientInputBox = (EditText)findViewById(R.id.RecipientTB);
+        SubjectInputBox = (EditText)findViewById(R.id.SubjectTB);
+        MessageMessageBox = (EditText)findViewById(R.id.MessageTB);
     }
-*/
 
-    protected void sendMessage(int MyUserId) {
-        int UserId = 0;
-        String Subject = "TestSubject";
-        String Message = "TestMessage";
+    /**
+     * Gets the details input by the user and sends a message when the Send button is pressed.
+     */
+    public void sendMessage(View V) {
 
-        // TODO: Get info input by user.
+        int MySenderUserId = 1;
+        String RUIDTemp = RecipientInputBox.getText().toString();
+        int RecipientUserId = Integer.valueOf(RUIDTemp);
+        String Subject = SubjectInputBox.getText().toString();
+        String Message = MessageMessageBox.getText().toString();
+        UserMessages NewMessage = new UserMessages(MySenderUserId, RecipientUserId, Subject, Message);
+
+        // TODO: Connect to send Button on click.
+
         MessagingDatabaseConn SendMessage = new MessagingDatabaseConn();
-        SendMessage.sendToDatabase(MyUserId, UserId, Subject, Message);
+        SendMessage.sendUserMessage(NewMessage);
     }
 
 }

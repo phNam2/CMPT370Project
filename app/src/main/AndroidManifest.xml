@@ -55,6 +55,30 @@
             android:label="Lease.TenantLeaseConfirm"
             android:parentActivityName="Lease.TenantLeaseConfirm" />
         <activity
+<<<<<<< HEAD
+=======
+            android:name=".Messaging.ReadMessageActivity"
+            android:label="Messaging.ReadMessageActivity"
+            android:parentActivityName="Messaging.ReadMessageActivity" />
+        <activity
+            android:name=".ReviewActivity"
+            android:label="@string/title_activity_review"
+            android:parentActivityName=".HomeActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.peter.myhome.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".ReviewHistoryActivity"
+            android:label="@string/title_activity_review_history"
+            android:parentActivityName=".HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.peter.myhome.HomeActivity" />
+        </activity>
+        <activity
+>>>>>>> feature/Another_Messaging
             android:name=".DatabaseTesting.DatabaseTestingActivity"
             android:label="Testing"
             android:parentActivityName=".Payment.PaymentActivity" />
